@@ -1,0 +1,2507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FA65Plus | Strength Today. Independence Tomorrow.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f2240;
+    --navy-mid: #1a3560;
+    --teal: #1d9e75;
+    --teal-light: #25c490;
+    --gold: #c8a96e;
+    --white: #ffffff;
+    --cream: #f8f5f0;
+    --text: #1a1a2e;
+    --text-mid: #4a5568;
+    --text-light: #8a9ab0;
+    --border: rgba(255,255,255,0.1);
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  /* Global inner section constraint */
+  .hero-content,
+  .story-inner,
+  .truth-inner,
+  .approach-inner,
+  .do-this-inner,
+  .sarco-inner,
+  .contact-inner,
+  .section-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(15,34,64,0.95);
+    backdrop-filter: blur(8px);
+    transition: background 0.4s;
+    box-sizing: border-box;
+    overflow: visible;
+    width: 100%;
+    border-bottom: 3px solid var(--teal);
+  }
+
+  nav.scrolled {
+    background: var(--navy);
+    box-shadow: 0 2px 40px rgba(0,0,0,0.3);
+    border-bottom: 3px solid var(--teal);
+  }
+
+  .nav-brand {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+  }
+
+  .nav-brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: -0.5px;
+  }
+
+  .nav-brand-tag {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-top: 3px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+
+  .nav-links a:hover { color: var(--teal-light); }
+
+  .nav-cta {
+    background: var(--teal) !important;
+    color: white !important;
+    padding: 11px 22px !important;
+    border-radius: 4px;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    border: none !important;
+    white-space: nowrap;
+  }
+
+  .nav-cta:hover { background: var(--teal-light) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 80% 50%, rgba(29,158,117,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 10% 80%, rgba(200,169,110,0.08) 0%, transparent 50%),
+      linear-gradient(135deg, #0a1628 0%, #0f2240 50%, #162d52 100%);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 24px 80px;
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 380px);
+    gap: 48px;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .hero-eyebrow-line {
+    width: 40px;
+    height: 2px;
+    background: var(--teal);
+  }
+
+  .hero-eyebrow-text {
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    font-weight: 600;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5.5vw, 72px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 28px;
+    letter-spacing: -1px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--teal-light);
+  }
+
+  .hero-sub {
+    font-size: 19px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 44px;
+    font-weight: 300;
+  }
+
+  .hero-sub strong {
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--teal);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+  }
+
+  .btn-primary:hover {
+    background: var(--teal-light);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn-ghost:hover { color: var(--white); }
+
+  .btn-ghost-arrow {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+
+  .btn-ghost:hover .btn-ghost-arrow {
+    border-color: var(--teal);
+    color: var(--teal-light);
+  }
+
+  /* Hero video card */
+  .hero-video-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-video-thumb {
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, rgba(15,34,64,0.9), rgba(29,158,117,0.2));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-video-thumb::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .play-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    position: relative;
+    z-index: 1;
+  }
+
+  .play-circle::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px solid rgba(29,158,117,0.4);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.15); opacity: 0; }
+  }
+
+  .hero-video-thumb:hover .play-circle {
+    background: var(--teal-light);
+    transform: scale(1.1);
+  }
+
+  .play-triangle {
+    width: 0; height: 0;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    border-left: 20px solid white;
+    margin-left: 3px;
+  }
+
+  .video-label {
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-video-caption {
+    padding: 20px 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .hero-video-caption p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+  }
+
+  .hero-video-caption strong {
+    color: rgba(255,255,255,0.8);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+
+  /* Hero stats */
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 48px;
+  }
+
+  .stat-item {}
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--teal-light);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 16px;
+    color: var(--white);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTION BASE ── */
+  section {
+    padding: 100px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-full {
+    max-width: none;
+    padding: 100px 0;
+  }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .section-label-line {
+    width: 32px;
+    height: 2px;
+    background: var(--teal);
+  }
+
+  .section-label-text {
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+  }
+
+  .section-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+
+  .section-h2.light { color: var(--white); }
+
+  .section-intro {
+    font-size: 18px;
+    color: var(--text-mid);
+    line-height: 1.75;
+    max-width: 640px;
+    font-weight: 300;
+  }
+
+  .section-intro.light { color: rgba(255,255,255,0.65); }
+
+  /* ── JIM'S STORY ── */
+  .story-section {
+    background: var(--white);
+    padding: 100px 0;
+  }
+
+  .story-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .story-left {}
+
+  .story-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 2.5vw, 32px);
+    font-style: italic;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.4;
+    border-left: 4px solid var(--teal);
+    padding-left: 28px;
+    margin-bottom: 40px;
+  }
+
+  .story-body {
+    font-size: 17px;
+    color: var(--text-mid);
+    line-height: 1.85;
+    font-weight: 300;
+  }
+
+  .story-body p { margin-bottom: 20px; }
+  .story-body p:last-child { margin-bottom: 0; }
+
+  .story-body strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .story-right {}
+
+  .story-card {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .story-card::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(29,158,117,0.1);
+  }
+
+  .story-card-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+    position: absolute;
+    top: 20px; right: 28px;
+  }
+
+  .story-card-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .story-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .story-card-body {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── TRUTH SECTION ── */
+  .truth-section {
+    background: var(--navy);
+    padding: 100px 0;
+  }
+
+  .truth-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 120px;
+    padding-right: 120px;
+    }
+
+  .truth-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 64px;
+  }
+
+  .truth-item {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    border-top: 5px solid var(--teal);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .truth-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  }
+
+  /* Photo at the top of each truth card */
+  .truth-photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(100%);
+  }
+
+  /* Bottom row: taller aspect so full face of portrait-orientation photos shows */
+  .truth-photo.truth-photo-tall {
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center 20%;
+  }
+
+  .truth-item-body {
+    padding: 28px 32px 32px;
+    flex: 1;
+  }
+
+  .truth-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .truth-body {
+    font-size: 16px;
+    color: var(--text-mid);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .truth-callout {
+    margin-top: 64px;
+    padding: 48px;
+    border: 1px solid rgba(29,158,117,0.3);
+    border-radius: 12px;
+    background: rgba(29,158,117,0.06);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .truth-callout-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-style: italic;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.4;
+  }
+
+  .truth-callout-text em {
+    color: var(--teal-light);
+    font-style: normal;
+  }
+
+  /* ── APPROACH ── */
+  .approach-section {
+    background: var(--white);
+    padding: 100px 0;
+  }
+
+  .approach-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    }
+
+  .approach-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 88px;
+  }
+
+  .approach-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .approach-step {
+    background: transparent;
+    padding: 32px 40px;
+    border: 3px solid var(--navy);
+    border-radius: 10px;
+    display: block;
+    min-height: 0;
+    transition: border-color 0.2s;
+  }
+
+  .approach-step:hover {
+    border-color: var(--teal);
+    transform: none;
+  }
+
+  /* Arrow divider between steps — downward arrow with shaft */
+  .approach-step:not(:last-child) {
+    margin-bottom: 88px;
+    position: relative;
+  }
+
+  .approach-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px;
+    height: 70px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 100' fill='%231d9e75'><path d='M 28,0 L 52,0 L 52,50 L 78,50 Q 50,55 40,100 Q 30,55 2,50 L 28,50 Z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  /* Hide the number entirely */
+  .step-num {
+    display: none;
+  }
+
+  .step-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .step-body {
+    font-size: 18px;
+    color: var(--text-mid);
+    line-height: 1.75;
+    font-weight: 400;
+  }
+
+  /* ── FAQ ── */
+  .faq-section {
+    background: var(--cream);
+    padding: 100px 0;
+    position: relative;
+  }
+
+  .faq-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .faq-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .faq-header .section-h2 {
+    margin-bottom: 20px;
+  }
+
+  .faq-header .section-intro {
+    margin: 0 auto;
+    max-width: 640px;
+  }
+
+  .faq-category {
+    margin-bottom: 56px;
+  }
+
+  .faq-category:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-category-label {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 2.4vw, 28px);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--navy);
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+
+  .faq-item {
+    background: var(--white);
+    border-radius: 8px;
+    margin-bottom: 14px;
+    border-left: 4px solid var(--teal);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+
+  .faq-item[open] {
+    box-shadow: 0 8px 30px rgba(15,34,64,0.08);
+  }
+
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 22px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.45;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    transition: background 0.15s;
+  }
+
+  .faq-item summary:hover {
+    background: rgba(29,158,117,0.04);
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border: 2px solid var(--teal);
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.25s, background 0.25s;
+    margin-top: 2px;
+  }
+
+  .faq-icon::before,
+  .faq-icon::after {
+    content: '';
+    position: absolute;
+    background: var(--teal);
+    transition: opacity 0.2s;
+  }
+
+  .faq-icon::before {
+    top: 50%;
+    left: 6px;
+    right: 6px;
+    height: 2px;
+    transform: translateY(-50%);
+  }
+
+  .faq-icon::after {
+    left: 50%;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    transform: translateX(-50%);
+  }
+
+  .faq-item[open] .faq-icon {
+    background: var(--teal);
+    transform: rotate(45deg);
+  }
+
+  .faq-item[open] .faq-icon::before {
+    background: var(--white);
+  }
+
+  .faq-item[open] .faq-icon::after {
+    opacity: 0;
+  }
+
+  .faq-answer {
+    padding: 0 28px 26px 28px;
+    font-size: 16.5px;
+    color: var(--text-mid);
+    line-height: 1.8;
+    font-weight: 400;
+  }
+
+  .faq-answer p {
+    margin-bottom: 14px;
+  }
+
+  .faq-answer p:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-answer strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .faq-cta {
+    margin-top: 64px;
+    text-align: center;
+    padding: 44px 32px;
+    background: var(--navy);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .faq-cta::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(29,158,117,0.12);
+  }
+
+  .faq-cta-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 2.5vw, 30px);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--white);
+    line-height: 1.4;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .faq-cta a {
+    display: inline-block;
+    background: var(--teal);
+    color: var(--white);
+    padding: 14px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    transition: background 0.2s;
+    position: relative;
+    z-index: 1;
+  }
+
+  .faq-cta a:hover {
+    background: var(--teal-light);
+  }
+
+  /* ── DO THIS ── */
+  .do-this-section {
+    background: var(--white);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .do-this-section::before {
+    display: none;
+  }
+
+  .do-this-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
+
+  .do-this-label {
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .do-this-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.05;
+    margin-bottom: 24px;
+  }
+
+  .do-this-body {
+    font-size: 18px;
+    color: var(--text-mid);
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 36px;
+  }
+
+  .do-this-videos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .video-row {
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+    border: 1px solid #e0e0e0;
+  }
+
+  .video-row:hover { background: #e8edf2; }
+
+  .video-row-play {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .video-row-play-tri {
+    width: 0; height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 12px solid white;
+    margin-left: 2px;
+  }
+
+  .video-row-title {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .video-row-sub {
+    font-size: 16px;
+    color: var(--text-mid);
+    margin-top: 2px;
+  }
+
+  /* ── SARCOPENIA ── */
+  .sarco-section {
+    background: var(--navy);
+    padding: 100px 0;
+  }
+
+  .sarco-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    }
+
+  .sarco-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+    margin-top: 64px;
+    padding-left: 60px;
+  }
+
+  .sarco-stat-big {
+    font-family: 'Playfair Display', serif;
+    font-size: 100px;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 8px;
+    opacity: 0.12;
+  }
+
+  .sarco-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .sarco-fact {
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .sarco-facts .sarco-fact:first-child { padding-top: 0; }
+
+  .sarco-fact:first-child { border-top: 1px solid rgba(255,255,255,0.12); }
+
+  .sarco-fact-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--teal-light);
+    line-height: 1;
+  }
+
+  .sarco-fact-text {
+    font-size: 18px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.75;
+  }
+
+  .sarco-fact-text strong { color: var(--white); }
+
+  .sarco-good-news {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sarco-good-news::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(29,158,117,0.15);
+  }
+
+  .sarco-good-news-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .sarco-good-news-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .sarco-good-news-body {
+    font-size: 16px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 32px;
+  }
+
+  .sarco-good-news-body strong { color: white; font-weight: 600; }
+
+  .sarco-closing {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--teal-light);
+    line-height: 1.4;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    background: var(--navy);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-section::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: -100px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(29,158,117,0.1) 0%, transparent 70%);
+  }
+
+  .contact-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-left {}
+
+  .contact-info {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .contact-info-icon {
+    width: 44px; height: 44px;
+    border-radius: 8px;
+    background: rgba(29,158,117,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .contact-info-text {
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .contact-info-text strong {
+    display: block;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  .contact-form {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 40px;
+  }
+
+  .form-group { margin-bottom: 20px; }
+
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 15px;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(255,255,255,0.2);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--teal);
+  }
+
+  .form-group textarea { height: 120px; resize: vertical; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #070f1c;
+    padding: 40px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .footer-brand span { color: var(--teal-light); }
+
+  .footer-tag {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 1px;
+  }
+
+  /* ── MOBILE ── */
+  .mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .mobile-menu-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-content { grid-template-columns: 1fr; gap: 48px; padding: 120px 32px 60px; }
+    .hero-video-card { max-width: 500px; }
+    .story-inner { grid-template-columns: 1fr; gap: 48px; padding: 0 32px; }
+    .truth-grid { grid-template-columns: 1fr 1fr; }
+    .approach-header { grid-template-columns: 1fr; gap: 32px; }
+    .approach-step { padding: 24px 22px; }
+    .approach-step:not(:last-child) { margin-bottom: 40px; }
+    .approach-step .step-title { font-size: 20px; }
+    .approach-steps { grid-template-columns: 1fr 1fr; }
+    .do-this-inner { grid-template-columns: 1fr; gap: 48px; padding: 0 32px; }
+    .sarco-split { grid-template-columns: 1fr; gap: 48px; }
+    .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+    section { padding: 80px 32px; }
+    .truth-callout { grid-template-columns: 1fr; gap: 24px; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    nav.scrolled { padding: 12px 24px; }
+    .nav-links { display: none; }
+    .mobile-menu-btn { display: flex; }
+    .truth-grid { grid-template-columns: 1fr; }
+    .approach-steps { grid-template-columns: 1fr; }
+    .hero-stats { flex-wrap: wrap; gap: 24px; }
+    footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+    .faq-section { padding: 70px 0; }
+    .faq-item summary { padding: 18px 20px; font-size: 16.5px; gap: 16px; }
+    .faq-answer { padding: 0 20px 22px 20px; font-size: 16px; }
+    .faq-cta { padding: 32px 24px; margin-top: 48px; }
+  }
+
+  /* ── PAGE SECTIONS NAV ── */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* Fade in animation */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-content > * {
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  .hero-content > *:nth-child(2) { animation-delay: 0.15s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+
+
+  /* ── LEARN MORE PANEL ── */
+  .lm-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    backdrop-filter: blur(3px);
+  }
+  .lm-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .lm-panel {
+    position: fixed;
+    top: 0; right: 0;
+    width: 88vw;
+    max-width: 1100px;
+    height: 100vh;
+    background: var(--white);
+    z-index: 2001;
+    transform: translateX(100%);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    display: flex;
+    overflow: hidden;
+    box-shadow: -8px 0 60px rgba(0,0,0,0.3);
+  }
+  .lm-panel.open {
+    transform: translateX(0);
+  }
+
+  /* Sidebar */
+  .lm-sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow-y: auto;
+  }
+
+  .lm-sidebar-header {
+    padding: 28px 24px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .lm-sidebar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 4px;
+  }
+
+  .lm-sidebar-sub {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .lm-nav {
+    padding: 16px 0;
+    flex: 1;
+  }
+
+  .lm-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 24px;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-left: 3px solid transparent;
+    color: rgba(255,255,255,0.5);
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .lm-nav-item:hover {
+    background: rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.85);
+  }
+
+  .lm-nav-item.active {
+    background: rgba(29,158,117,0.12);
+    border-left-color: var(--teal);
+    color: white;
+  }
+
+  .lm-nav-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .lm-close {
+    margin: 16px 24px 24px;
+    padding: 10px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .lm-close:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+  }
+
+  /* Content area */
+  .lm-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 48px 52px;
+    background: #f7f8fa;
+  }
+
+  .lm-section { display: none; }
+  .lm-section.active { display: block; }
+
+  .lm-section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .lm-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 24px;
+    letter-spacing: -0.3px;
+  }
+
+  .lm-section-intro {
+    font-size: 16px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-weight: 300;
+    border-left: 3px solid var(--teal);
+    padding-left: 16px;
+  }
+
+  .lm-card {
+    background: white;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border-left: 4px solid var(--teal);
+  }
+
+  .lm-card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .lm-card-num {
+    width: 28px; height: 28px;
+    background: var(--navy);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .lm-card-body {
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .lm-card-body strong { color: var(--navy); font-weight: 600; }
+
+  .lm-card-body ul {
+    margin: 10px 0 0 20px;
+    color: var(--text-mid);
+    line-height: 2;
+    font-size: 15px;
+  }
+
+  .lm-divider {
+    border: none;
+    border-top: 1px solid #e4e6ea;
+    margin: 20px 0;
+  }
+
+  .lm-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .lm-stat-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+
+  .lm-stat {
+    background: var(--navy);
+    border-radius: 10px;
+    padding: 20px 24px;
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+  }
+
+  .lm-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--teal-light);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .lm-stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .lm-resource-img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .lm-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    margin-right: 8px;
+    margin-top: 8px;
+    transition: background 0.2s;
+  }
+  .lm-link:hover { background: var(--teal); }
+  .lm-link.yt { background: #cc0000; }
+  .lm-link.yt:hover { background: #e60000; }
+
+  .lm-article {
+    background: white;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-left: 4px solid var(--teal);
+    text-decoration: none;
+    display: block;
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: inherit;
+  }
+  .lm-article:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  }
+  .lm-article-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .lm-article-body {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+  .lm-article-source {
+    font-size: 12px;
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 6px;
+  }
+
+  @media (max-width: 768px) {
+    .lm-panel { width: 100vw; }
+    .lm-sidebar { width: 200px; }
+    .lm-content { padding: 32px 24px; }
+    .lm-grid-2 { grid-template-columns: 1fr; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="main-nav">
+  <a href="#" class="nav-brand" onclick="scrollToTop()">
+    <span class="nav-brand-name">FA65Plus</span>
+    <span class="nav-brand-tag">Strength Today · Independence Tomorrow</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#story">My Story</a></li>
+    <li><a href="#sarcopenia">Sarcopenia</a></li>
+    <li><a href="#approach">The Approach</a></li>
+    <li><a href="#dothis">Do This</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><button class="nav-cta" onclick="openLM()" style="font-family:'DM Sans',sans-serif; cursor:pointer;">Learn More</button></li>
+  </ul>
+  <button class="mobile-menu-btn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══════════════════════════════════════ -->
+<!-- HERO                                   -->
+<!-- ══════════════════════════════════════ -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div>
+      <h1>I'm one of<br><em>you.</em></h1>
+      <p class="hero-sub">
+        In the fall of 2024 I fell crossing an asphalt parking lot. On my face. And I was wearing shorts. Now I'm a certified personal trainer and work with clients 65+ to get stronger, move better, and live independently. Because I live this life too.
+      </p>
+      
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">80</div>
+          <div class="stat-label">Years old</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">2×</div>
+          <div class="stat-label">Certified</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">65+</div>
+          <div class="stat-label">Exclusively</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="hero-video-card">
+        <div class="hero-video-thumb">
+          <div class="play-circle">
+            <div class="play-triangle"></div>
+          </div>
+          <span class="video-label">Watch: Jim's Story</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!-- JIM'S STORY                            -->
+<!-- ══════════════════════════════════════ -->
+<div class="story-section" id="story">
+  <div class="story-inner">
+    <div class="story-left">
+      <h2 class="section-h2">A Fall.</h2>
+
+      <blockquote class="story-quote" style="margin-top:32px;">
+        "I was walking across a parking lot. A car was coming. I looked up — and tripped and fell on my face."
+      </blockquote>
+
+      <div class="story-body">
+        <p>I'd been exercising for more than 45 years. Much of my adult life I was a runner, New York City and Twin City Marathons. About 10 years ago I cut back on running and started going to the gym. My routine was pretty straightforward. Every other day, I worked on 6-7 machines, gradually increased weight. Occasionally did some pushups. The gym I was at didn't allow outside trainers so I was figuring it out on my own. Before my fall I was seriously bored and moderately fit.</p>
+        <p>After the fall I stopped going to the gym, and stopped running completely. I was discouraged.</p>
+        <p>A friend suggested that a personal trainer might help and I found one at a local gym. We talked about my situation and he pointed out two very important points: while machines can be useful we live our lives in three dimensions, in movement. Machines only operate in two dimensions. We agreed to minimize machines. Second, he said that <strong>core</strong> work is an essential part of any program because it builds muscles that are a stabilization platform for movement. It was an excellent beginning to a new training program for me.</p>
+        <p>By accident — or maybe divine intervention! — I learned about sarcopenia. Had never heard of it before. It's the gradual, and almost universal decline in muscle and strength that happens as we age. And loss of strength leads to a loss of mobility, independence, and quality of life. This revelation set me on a brand new life journey.</p>
+        <p>I learned that no matter how old we are <strong>we can get stronger.</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- SARCOPENIA                            -->
+<!-- ══════════════════════════════════════ -->
+<div class="sarco-section" id="sarcopenia">
+  <div class="sarco-inner">
+    <h2 class="section-h2 light" style="max-width:800px; margin-left:auto; margin-right:auto; text-align:center;">Sarcopenia.<br>Most people have never heard of it.</h2>
+    <p class="section-intro light" style="margin-top:16px; margin-left:auto; margin-right:auto; text-align:center;">By the time we do, it's already been quietly happening for years. Things that used to be easy — stairs, grocery bags, getting up from the floor, standing up from a chair — have gradually become hard. So we stop doing things. And people start to see us as weak, frail, slow, fearful. And sadly, they're not wrong. <strong style="color:var(--teal-light);">BUT IT DOESN'T HAVE TO BE THAT WAY!</strong></p>
+
+    <div class="sarco-split">
+      <div class="sarco-facts" style="max-width:520px;">
+        <div class="sarco-fact" style="grid-template-columns:1fr;">
+          <div class="sarco-fact-text"><strong>It begins in our 40s.</strong> Most people don't notice until their 60s or 70s — by then, years of muscle loss have quietly accumulated.</div>
+        </div>
+        <div class="sarco-fact" style="grid-template-columns:1fr;">
+          <div class="sarco-fact-text"><strong>It accelerates dramatically after 60.</strong> The charts on the right should be a huge warning sign for everyone over 60. It's the point where resistance training can make a huge difference in how we live the rest of our lives.</div>
+        </div>
+        <div class="sarco-fact" style="grid-template-columns:1fr;">
+          <div class="sarco-fact-text"><strong>Resistance training reverses it.</strong> Adults 65+ who train consistently see significant strength gains — regardless of how long they've been sedentary.</div>
+        </div>
+        <div class="sarco-fact" style="grid-template-columns:1fr;">
+          <div class="sarco-fact-text">Most adults 65+ are not doing resistance training. They are paying a price <strong style="color:var(--teal-light);">they don't need to pay.</strong></div>
+        </div>
+
+        <!-- Headline tucked into the empty space at the bottom of the left column -->
+        <div style="margin-top:40px;">
+          <h2 style="font-family:'Playfair Display',serif; font-size:clamp(28px,4vw,52px); font-weight:900; color:white; line-height:1.1; letter-spacing:-1px;">
+            Sarcopenia is <em style="color:var(--teal-light); font-style:italic;">not inevitable.</em>
+          </h2>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div style="background:#ffffff; border-radius:10px; padding:16px; border-top:5px solid var(--teal);">
+          <img src="images/muscle-mass-decline.png" alt="Muscle Mass Index Decline with Age" style="width:100%; height:auto; display:block; border-radius:4px;">
+        </div>
+        <div style="background:#ffffff; border-radius:10px; padding:16px; border-top:5px solid var(--teal);">
+          <img src="images/muscle-strength-decline.png" alt="Muscle Strength Decline with Age" style="width:100%; height:auto; display:block; border-radius:4px;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Good News — editorial moment -->
+    <div style="margin-top:24px; padding:24px 80px 32px; text-align:center; position:relative;">
+
+      <!-- faint background word -->
+      <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-family:'Playfair Display',serif; font-size:clamp(80px,14vw,180px); font-weight:900; color:rgba(255,255,255,0.04); white-space:nowrap; pointer-events:none; letter-spacing:-4px; line-height:1;">GOOD NEWS</div>
+
+      <p style="font-size:18px; color:rgba(255,255,255,0.65); line-height:1.85; max-width:960px; margin:0 auto 32px; font-weight:300; position:relative;">
+        It's clear from the research that adults in their 60s, 70s, even their 80s can build meaningful strength with a program of resistance training exercise. <strong style="color:white; font-weight:500;">FA65Plus was created to help you every step of the way.</strong>
+      </p>
+
+      <div style="width:48px; height:2px; background:var(--teal); margin:0 auto 24px; position:relative;"></div>
+
+      <p style="font-family:'Playfair Display',serif; font-size:clamp(18px,2.2vw,26px); font-weight:700; font-style:italic; color:white; line-height:1.4; max-width:800px; margin:0 auto; position:relative;">
+        "We can stay strong, mobile, and independent —<br>in control of our own lives."
+      </p>
+
+    </div>
+
+  </div>
+</div>
+<!-- ══════════════════════════════════════ -->
+<div class="approach-section" id="approach">
+  <div class="approach-inner">
+    <div class="approach-header" style="display:block; text-align:center; margin-bottom:56px;">
+      <h2 class="section-h2" style="max-width:900px; margin:0 auto 28px;">The Functional Aging Training Model<sup style="font-size:0.5em; font-weight:700; vertical-align:super;">TM</sup> (FATM) was built specifically to counter the effects of <em style="color:var(--teal); font-style:italic; font-weight:900;">Sarcopenia</em>.<br>This is how it works.</h2>
+      <p class="section-intro" style="max-width:820px; margin:0 auto;">The FATM was the outgrowth of The Functional Aging Institute founded by Dr. Dan Ritchie and Dr. Cody Sipe. Their philosophy of helping seniors stay strong, mobile, and independent was a perfect fit for me and I decided to become a Certified Functional Aging Specialist — <strong style="color:var(--teal); font-weight:700;">These are the essential elements of the FATM and how I work with my 65+ clients.</strong></p>
+    </div>
+
+    <div class="approach-steps">
+      <div class="approach-step">
+        <div class="step-num">01</div>
+        <div class="step-title">We start with where you are now.</div>
+        <div class="step-body">Every program starts with a thorough individual assessment. That includes your health history and your past experiences with exercising identifying your current capabilities and constraints. Then we conduct individual movement assessments such as sit-to-stand, standing on one leg, hand grip strength, and more. This will enable us to create a baseline that we will use to monitor progress.</div>
+      </div>
+      <div class="approach-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Your Goals. Not Generic Ones.</div>
+        <div class="step-body">People 65+ have much different exercise goals than people under 50. That is central to the FATM approach. We build around what you <strong style="color:var(--teal); font-weight:900;">NEED</strong> to do, <strong style="color:var(--teal); font-weight:900;">WANT</strong> to do, and <strong style="color:var(--teal); font-weight:900;">USED</strong> to do but no longer can.</div>
+      </div>
+      <div class="approach-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Train for Real Life.</div>
+        <div class="step-body">We strength train for real life. Getting up from a chair. Preventing falls. Living independently. Mobility that lets us continue doing the activities we love. The metrics we use to plan your exercise program are the metrics of your daily life.</div>
+      </div>
+      <div class="approach-step">
+        <div class="step-num">04</div>
+        <div class="step-title">Progressive Overload.</div>
+        <div class="step-body">As we exercise to get stronger we need to gradually and consistently increase the weight we push, pull, and lift — because over time as our bodies get stronger they will eventually adapt to the changes. We'll experience it as a "plateau." This is the key to resistance training and it's called <strong style="color:var(--teal); font-weight:600;">progressive overloading</strong>.</div>
+      </div>
+      <div class="approach-step">
+        <div class="step-num">05</div>
+        <div class="step-title">Safety Is Non-Negotiable.</div>
+        <div class="step-body">For adults 65+ an injury can derail everything. If someone 35 injures themselves during training, recovery can be brief. Training injuries for people 65+ are much more challenging. That's why the FATM embeds safety into every exercise strategy, every individual exercise routine, and every session. It's not an after-thought, it's the foundation of what we do.</div>
+      </div>
+      <div class="approach-step">
+        <div class="step-num">06</div>
+        <div class="step-title">Adjust. Reassess. Evolve.</div>
+        <div class="step-body">Monitoring your progress is essential. Achieving your goals is why you're doing this and knowing where you are in relation to those goals tells us whether we're on the right track. We use quantitative and qualitative metrics — everything from number of exercise repetitions and weights used — to your ability to get out of a chair without using your arms.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- DO THIS                               -->
+<!-- ══════════════════════════════════════ -->
+<div class="do-this-section" id="dothis">
+  <div style="max-width:1200px; margin:0 auto; padding:0 24px; box-sizing:border-box; position:relative; z-index:1;">
+    <div class="do-this-label">If You Do Nothing Else</div>
+    <h2 class="do-this-title">No matter<br>what —<br>DO THIS.</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; margin-top:32px;">
+      <p class="do-this-body">If everything you've read to this point seems a bit overwhelming, here's what I recommend: Make a promise to yourself that you'll start gaining strength by doing a single exercise. One that is extremely important to strength, mobility, and independence — the SQUAT! My recommendation is not the typical squat but an exercise universally called the sit-to-stand.</p>
+      <div>
+        <p style="font-family:'Playfair Display',serif; font-size:clamp(22px,2.5vw,32px); font-style:italic; font-weight:700; color:var(--navy); line-height:1.4; border-left:4px solid var(--teal); padding-left:28px; margin-bottom:0;">"The reason a lot of seniors go into assisted living is that they can no longer stand up independently."</p>
+        <p style="font-size:18px; color:var(--teal); margin-top:16px; font-weight:600; letter-spacing:0.5px; padding-left:32px;">— Physical Therapy Research</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1200px; margin:48px auto 0; padding:0 24px; box-sizing:border-box;">
+    <div style="display:flex; flex-direction:column; gap:16px; max-width:700px; margin:0 auto;">
+      <div class="video-row">
+        <div class="video-row-play"><div class="video-row-play-tri"></div></div>
+        <div>
+          <div class="video-row-title">The Sit-to-Stand: Basics</div>
+          <div class="video-row-sub">Form, safety, and why it matters</div>
+        </div>
+      </div>
+      <div class="video-row">
+        <div class="video-row-play"><div class="video-row-play-tri"></div></div>
+        <div>
+          <div class="video-row-title">Modifications for Every Level</div>
+          <div class="video-row-sub">Wherever you're starting from</div>
+        </div>
+      </div>
+      <div class="video-row">
+        <div class="video-row-play"><div class="video-row-play-tri"></div></div>
+        <div>
+          <div class="video-row-title">Building Up Over Time</div>
+          <div class="video-row-sub">Progressive overload, done safely</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1200px; margin:60px auto 0; padding:0 24px; box-sizing:border-box;">
+    <h2 class="do-this-title" style="margin-bottom:16px;">Ready for more?</h2>
+    <p class="do-this-body" style="margin-bottom:24px;"><strong>Excellent!</strong> Here are three more very important things you can do:</p>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+      <div style="background:var(--navy); border-radius:10px; padding:28px 32px; border-top:5px solid var(--teal);">
+        <div style="font-size:19px; font-weight:600; color:var(--white); margin-bottom:10px; line-height:1.3;">Increase your daily protein intake!</div>
+        <div style="font-size:16px; color:rgba(255,255,255,0.75); line-height:1.75; font-weight:300;">100 grams per day minimum, ideally 1 gram per pound of body weight — spread equally over breakfast, lunch, and dinner. Supplements are fine, avoid ones with heavy added sugar. Protein is the building block of muscle and it will help you as you begin exercising.</div>
+      </div>
+      <div style="background:var(--navy); border-radius:10px; padding:28px 32px; border-top:5px solid var(--teal);">
+        <div style="font-size:19px; font-weight:600; color:var(--white); margin-bottom:10px; line-height:1.3;">Start doing planks.</div>
+        <div style="font-size:16px; color:rgba(255,255,255,0.75); line-height:1.75; font-weight:300;">Another excellent way to build your core. There are dozens and dozens of examples of how to do a plank on YouTube — the most important point is to keep your back straight. The goal is to gradually increase the amount of time you hold it.</div>
+      </div>
+      <div style="background:var(--navy); border-radius:10px; padding:28px 32px; border-top:5px solid var(--teal);">
+        <div style="font-size:19px; font-weight:600; color:var(--white); margin-bottom:10px; line-height:1.3;">Add wall push-ups.</div>
+        <div style="font-size:16px; color:rgba(255,255,255,0.75); line-height:1.75; font-weight:300;">You can easily start with your hands high on the wall and as you get stronger, work your hands down. Also dozens of YouTube examples out there. A good starting place is doing 10 easy ones, rest for a minute, then do another 10, rest for a minute, and do another 10.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- FAQ                                    -->
+<!-- ══════════════════════════════════════ -->
+<div class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <h2 class="section-h2">Questions you<br>might be asking.</h2>
+      <p class="section-intro">Most of these came from real conversations — with friends, neighbors, and people my age who were thinking about getting started but weren't quite sure. If yours isn't here, ask me directly.</p>
+    </div>
+
+    <!-- ── CATEGORY: Safety & Health ── -->
+    <div class="faq-category">
+      <div class="faq-category-label">Safety &amp; health</div>
+
+      <details class="faq-item">
+        <summary>Is it safe for me to start exercising at my age, especially if I haven't worked out in years?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>For the vast majority of people 65+, the answer is yes — and the research is unambiguous that the risk of <em>not</em> exercising is far greater than the risk of starting. That said, I take "starting where you are" seriously. We begin with a careful assessment, work at a pace that respects your body, and build up only as you're ready. Nothing about good training for our age group should feel reckless.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do I need clearance from my doctor before we start?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>If you have any cardiovascular condition, are recovering from surgery, or have a chronic condition your doctor is actively managing, yes — please talk to them first. For most other situations, a conversation with your doctor is a good idea but not required. I'll ask you a thorough health-history questionnaire either way, and I'd rather pause and check with your physician than guess.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>I have arthritis (or osteoporosis, a hip replacement, balance issues, diabetes, a heart condition). Can you still work with me?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>In most cases, yes. The Functional Aging Training Model I use was built specifically for people managing the realities of aging bodies — including the conditions you listed. Strength training is one of the <strong>best</strong> things you can do for arthritis, bone density, and blood-sugar control, and it's done a lot for my own joints. I'll need to know what you're dealing with so we can adapt the work, but a diagnosis isn't a reason to stop.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What happens if I get hurt or fall during a session?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>I train one-on-one and I'm right there with you — spotting, cueing, and watching closely. Falls and injuries during sessions are extremely rare because the work is structured and supervised, but I carry liability insurance, I'm CPR/AED certified, and we have a plan for what to do if something does happen. Your safety isn't an afterthought. It's the whole point.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- ── CATEGORY: Qualifications & Approach ── -->
+    <div class="faq-category">
+      <div class="faq-category-label">My qualifications &amp; approach</div>
+
+      <details class="faq-item">
+        <summary>What are your qualifications?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>I'm an <strong>ISSA Certified Personal Trainer</strong> and an <strong>ISSA Certified Functional Aging Specialist</strong> — that second certification specifically covers the science and methods of training adults 65 and older. I also do continuing education through the Functional Aging Institute, who developed the training model I follow. I'm not a physical therapist, and I'm not a doctor — I'm a trainer who specializes in our age group.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Have you actually worked with people my age?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>Yes. I started by working with friends in my own circle — people I trusted to give me honest feedback and tell me when something wasn't working. That's how I built my approach: real reps with real people in their 70s and 80s, not theory. As FA65Plus grows, I'm continuing to take on clients carefully and intentionally, so the work stays personal.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How is training someone my age different from training a younger person?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>It's almost a different job. Younger trainers chase aesthetics, performance, and PRs. With clients 65+, the goals are different: keeping you out of assisted living, making the stairs feel easy again, helping you get up off the floor without thinking about it, keeping you steady on uneven ground. The exercises are adapted, the rest periods are different, the cueing is different, and the progression is much more gradual. I built FA65Plus around that difference.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Will you push me too hard? Or not hard enough?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>This is the question I think about most. Too easy and nothing changes; too hard and you get hurt or quit. The honest answer is that I'll push you a little — strength gains require effort that feels real — but always with an exit ramp, and always while watching how your body is responding. We talk constantly during sessions. If something doesn't feel right, we change it. Period.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- ── CATEGORY: What sessions look like ── -->
+    <div class="faq-category">
+      <div class="faq-category-label">What sessions actually look like</div>
+
+      <details class="faq-item">
+        <summary>What does a typical session involve? Will I be lifting weights?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>A typical session runs about an hour: a thorough warm-up, then strength work (yes, including weights — appropriate ones), balance training, mobility, and a cool-down. The "weights" might be dumbbells, bands, kettlebells, or just your body — whatever fits where you are. We work in multiple planes of motion because real life happens in multiple planes of motion. You won't be on a leg-press machine staring at a TV.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do I need to be able to get down on the floor?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>No — but getting up and down from the floor safely is one of the most important skills for staying independent, so it's something we'll likely work toward over time, at your pace. If you can't do it now, we use chairs, benches, and standing variations. If you can, we'll keep that ability sharp.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How often should we meet, and where?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>For most clients, twice a week is the sweet spot — enough frequency to build real strength, enough recovery between sessions. Some clients do well with once a week plus homework. Sessions can happen at a private training space, in your home, or — for some clients — over video. We'll figure out what fits your life.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- ── CATEGORY: Results & expectations ── -->
+    <div class="faq-category">
+      <div class="faq-category-label">Results &amp; expectations</div>
+
+      <details class="faq-item">
+        <summary>What can I realistically expect to feel in 1, 3, and 6 months?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p><strong>One month:</strong> things start to feel a little easier — getting out of a chair, climbing stairs, carrying groceries. Most people sleep better, too.</p>
+          <p><strong>Three months:</strong> measurable strength gains. You'll notice you don't hesitate before doing things you used to hesitate about.</p>
+          <p><strong>Six months:</strong> a different relationship with your body. Better balance, more confidence on uneven ground, more energy in the rest of your day. None of this is hypothetical — it's the standard trajectory the research and my own clients consistently show.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>I'm worried about losing my independence. Can training really help?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>This is the central question, and the honest answer is yes — more than almost anything else available to you. The single biggest predictor of whether someone stays in their own home as they age is whether they can stand up from a chair without help. Strength is what protects independence. That's not a slogan; that's why I built FA65Plus.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if I have a bad day and can't do much?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>We adjust. Some days you'll show up tired, sore, or distracted, and we'll dial things back — maybe focus on mobility, balance, or just movement. Some days you'll surprise yourself. Both kinds of days are part of the process. The trainers who push through everything are the ones whose clients get hurt.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- ── CATEGORY: Logistics & money ── -->
+    <div class="faq-category">
+      <div class="faq-category-label">Logistics &amp; money</div>
+
+      <details class="faq-item">
+        <summary>What does it cost?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>Sessions run <strong>$75–$100 per hour</strong>, depending on location and frequency. Packages can bring the per-session rate down. The first conversation is free — no obligation, no pitch. We'll talk about your situation and figure out together whether this makes sense for you.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do you take insurance or Medicare?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>I don't. Personal training is not a covered medical service under Medicare or most supplemental plans, even though the work I do is genuinely preventive. Some clients pay out of pocket and find it well worth it; some use HSA/FSA funds where their plan allows. If cost is the obstacle, let's talk — there's almost always a version of this that fits.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can my spouse train with me?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>In some cases, yes — partner sessions can work well, especially if you're at similar fitness levels and want the company. For others, individualized training is more effective. We can talk about what makes sense for you both.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- ── CATEGORY: The honest stuff ── -->
+    <div class="faq-category">
+      <div class="faq-category-label">The honest stuff</div>
+
+      <details class="faq-item">
+        <summary>I'm embarrassed about my current fitness level. Is that going to be a problem?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>No. And I mean that. In the fall of 2024, I was 78 years old and I fell on my face crossing a parking lot — wearing shorts. I was not in any kind of shape to be proud of. I trained myself back, got certified, and built this practice because I know exactly what it feels like to think you've waited too long. You haven't. Wherever you're starting is fine.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if I can't keep up?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>There's nothing to keep up with. This isn't a class. There are no other clients in the room watching you. The pace of every session is set entirely by where <em>you</em> are that day, and the only person you're being measured against is the version of you from last week.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>I've tried gyms before and felt out of place. How is this different?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>Most gyms are designed for people in their 20s and 30s and staffed by trainers who've never lived in a 70- or 80-year-old body. The music is loud, the equipment is intimidating, and the culture is built around looking a certain way. FA65Plus is the opposite of that. Quiet, focused, individualized, and built around the things that actually matter at our age. You won't feel out of place. You'll feel like the work was made for you — because it was.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-cta">
+      <p class="faq-cta-text">Still have a question?<br>Best place to start is a free conversation.</p>
+      <a href="#contact">Reach out</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- CONTACT                               -->
+<!-- ══════════════════════════════════════ -->
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <h2 class="section-h2 light">Ready to get<br>stronger?</h2>
+      <p class="section-intro light" style="margin-top:20px;">The first conversation is free. No commitment. Just a chance to talk about where you are, what's getting harder, and whether FA65Plus might be the right fit for you.</p>
+
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📞</div>
+          <div class="contact-info-text">
+            <strong>Phone</strong>
+            (845) 943-0623
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">✉️</div>
+          <div class="contact-info-text">
+            <strong>Email</strong>
+            JimDeckerFA65Plus@gmail.com
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">🌐</div>
+          <div class="contact-info-text">
+            <strong>Website</strong>
+            FA65Plus.com
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3 style="font-family:'Playfair Display',serif; font-size:24px; font-weight:700; color:white; margin-bottom:28px;">Book a Free Call</h3>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="First and last name">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>Phone (optional)</label>
+        <input type="tel" placeholder="(555) 000-0000">
+      </div>
+      <div class="form-group">
+        <label>What's going on?</label>
+        <textarea placeholder="Tell me a little about where you are and what's been getting harder..."></textarea>
+      </div>
+      <button class="btn-primary" style="width:100%; padding:16px; font-size:16px;">Send My Message</button>
+    </div>
+  </div>
+
+  <div style="max-width:1200px; margin:60px auto 0; padding:0 40px; box-sizing:border-box; text-align:center;">
+    <p style="font-family:'Playfair Display',serif; font-size:clamp(22px,2.5vw,32px); font-style:italic; font-weight:700; color:white; line-height:1.5; margin-bottom:16px;">"I'm 80 years old and I know what it feels like to be afraid of falling. And I know what it's like to want to stop exercising."<br><br>"I also know that you can get stronger. I did and so can you."</p>
+    <p style="font-size:18px; color:var(--teal-light); font-weight:600; letter-spacing:0.5px;">— Jim Decker, Certified Functional Aging Specialist</p>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div>
+    <div style="font-family:'Playfair Display',serif; font-size:24px; font-weight:900; color:var(--white);">FA65<span style="color:var(--teal-light);">Plus</span></div>
+    <div style="font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--teal-light); margin-top:4px;">Strength Today · Independence Tomorrow</div>
+  </div>
+  <div style="font-size:14px; color:var(--white); letter-spacing:0.5px;">Jim Decker · Certified Functional Aging Specialist · (845) 943-0623</div>
+</footer>
+
+<script>
+  // Nav scroll behavior
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('main-nav');
+    if (window.scrollY > 60) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+
+
+  function openLM() {
+    document.getElementById('lm-panel').classList.add('open');
+    document.getElementById('lm-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLM() {
+    document.getElementById('lm-panel').classList.remove('open');
+    document.getElementById('lm-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function showLMSection(id) {
+    document.querySelectorAll('.lm-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.lm-nav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById('lm-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+    document.querySelector('.lm-content').scrollTop = 0;
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLM();
+  });
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+<!-- ══════════════════════════════════════ -->
+<!-- LEARN MORE OVERLAY + PANEL            -->
+<!-- ══════════════════════════════════════ -->
+<div class="lm-overlay" id="lm-overlay" onclick="closeLM()"></div>
+
+<div class="lm-panel" id="lm-panel">
+
+  <!-- Sidebar -->
+  <div class="lm-sidebar">
+    <div class="lm-sidebar-header">
+      <div class="lm-sidebar-title">Learn More</div>
+      <div class="lm-sidebar-sub">FA65Plus Reference</div>
+    </div>
+    <nav class="lm-nav">
+      <div class="lm-nav-item active" onclick="showLMSection('fatm')">
+        <span class="lm-nav-icon">🏛️</span>FATM In Depth
+      </div>
+      <div class="lm-nav-item" onclick="showLMSection('process')">
+        <span class="lm-nav-icon">📋</span>The 6-Step Process
+      </div>
+      <div class="lm-nav-item" onclick="showLMSection('about80')">
+        <span class="lm-nav-icon">📊</span>All About 80
+      </div>
+      <div class="lm-nav-item" onclick="showLMSection('reading')">
+        <span class="lm-nav-icon">📰</span>Night-time Reading
+      </div>
+      <div class="lm-nav-item" onclick="showLMSection('resources')">
+        <span class="lm-nav-icon">🎥</span>Excellent Resources
+      </div>
+    </nav>
+    <div class="lm-close" onclick="closeLM()">✕ &nbsp;Close</div>
+  </div>
+
+  <!-- Content -->
+  <div class="lm-content">
+
+    <!-- ── FATM IN DEPTH ── -->
+    <div class="lm-section active" id="lm-fatm">
+      <div class="lm-section-eyebrow">The Methodology</div>
+      <h2 class="lm-section-title">The Functional Aging Training Model</h2>
+      <p class="lm-section-intro">The FATM is a science-backed, individualized system designed specifically for adults 65+. It prioritizes independence, daily function, and quality of life — built around ten overarching goals, four cornerstones, two pillars, and seven key principles.</p>
+
+      <h3 style="font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--navy); margin-bottom:16px;">10 Goals of FATM</h3>
+      <div class="lm-card"><div class="lm-card-title"><div class="lm-card-num">1</div>Maintain Independence in Daily Life</div><div class="lm-card-body">Preserve the ability to perform activities of daily living — standing up from a chair, carrying groceries, reaching overhead, climbing stairs, getting up from the floor.</div></div>
+      <div class="lm-card"><div class="lm-card-title"><div class="lm-card-num">2</div>Preserve and Build Strength</div><div class="lm-card-body">Maintain muscle mass (counteracting sarcopenia), improve functional strength especially in the legs, hips, core, and upper back — focused on everyday tasks, not maximal lifting.</div></div>
+      <div class="lm-card"><div class="lm-card-title"><div class="lm-card-num">3</div>Improve Balance and Fall Prevention</div><div class="lm-card-body">Enhance static and dynamic balance. Reduce fall risk — one of the biggest threats to healthy aging.</div></div>
+      <div class="lm-card"><div class="lm-card-title"><div class="lm-card-num">4</div>Maintain Mobility and Joint Health</div><div class="lm-card-body">Preserve range of motion in key joints (hips, shoulders, spine, ankles). Improve movement quality to reduce pain and stiffness.</div></div>
+      <div class="lm-card"><div class="lm-card-title"><div class="lm-card-num">5</div>Support Cardiovascular Health</div><div class="lm-card-body">Maintain heart and lung capacity for daily endurance. Improve work capacity for activities like walking, climbing, and household tasks.</div></div>
+      <div class="lm-card"><div class="lm-card-title"><div class="lm-card-num">6</div>Enhance Core Stability and Posture</div><div class="lm-card-body">Improve posture to reduce neck, shoulder, and low-back strain. Enable safer lifting, reaching, and twisting.</div></div>
+      <div class="lm-card"><div class="lm-card-title"><div class="lm-card-num">7</div>Reduce Injury and Pain Risk</div><div class="lm-card-body">Correct movement patterns, build tolerance to load gradually, and strengthen commonly vulnerable areas — hips, knees, shoulders.</div></div>
+      <div class="lm-card"><div class="lm-card-title"><div class="lm-card-num">8</div>Promote Longevity and Quality of Life</div><div class="lm-card-body">Extend healthspan, not just lifespan. Maintain confidence in movement.</div></div>
+      <div class="lm-card"><div class="lm-card-title"><div class="lm-card-num">9</div>Adaptability Across Ability Levels</div><div class="lm-card-body">Exercises are scalable for beginners and highly active adults. Strategies evolve as needs, health status, or limitations change.</div></div>
+      <div class="lm-card"><div class="lm-card-title"><div class="lm-card-num">10</div>Encourage Sustainable, Lifelong Activity</div><div class="lm-card-body">Emphasize habit formation, avoid burnout and overtraining, and support mental well-being and self-efficacy.</div></div>
+
+      <hr class="lm-divider">
+      <h3 style="font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--navy); margin-bottom:12px;">The Seven Key Principles of the Functional Aging Training Model</h3>
+      <div class="lm-card">
+        <div class="lm-card-body">
+          <ul style="list-style:none; margin:0; padding:0;">
+            <li style="padding:6px 0; border-bottom:1px solid #eee;">📌 &nbsp;Assess, prioritize, and train all components of function.</li>
+            <li style="padding:6px 0; border-bottom:1px solid #eee;">📌 &nbsp;Make purposeful training decisions.</li>
+            <li style="padding:6px 0; border-bottom:1px solid #eee;">📌 &nbsp;Integrate multi-planar movement patterns.</li>
+            <li style="padding:6px 0; border-bottom:1px solid #eee;">📌 &nbsp;Use isolation exercises only as supplementary elements.</li>
+            <li style="padding:6px 0; border-bottom:1px solid #eee;">📌 &nbsp;Use seated exercises only when necessary.</li>
+            <li style="padding:6px 0; border-bottom:1px solid #eee;">📌 &nbsp;Order sessions by energy and complexity.</li>
+            <li style="padding:6px 0;">📌 &nbsp;Maximize safety through holistic awareness and sound teaching.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 6-STEP PROCESS ── -->
+    <div class="lm-section" id="lm-process">
+      <div class="lm-section-eyebrow">How We Build Your Plan</div>
+      <h2 class="lm-section-title">The 6-Step Process</h2>
+      <p class="lm-section-intro">In the FATM approach, before participants begin lifting, pushing, pulling, or turning, we build a plan. Every step matters.</p>
+
+      <div class="lm-card">
+        <div class="lm-card-title"><div class="lm-card-num">1</div>Conduct Individual Assessments</div>
+        <div class="lm-card-body">
+          We conduct individual assessments that identify risks and limitations, set baselines for tracking performance, determine when referrals might be needed, and generate enthusiasm and confidence.
+          <ul style="margin-top:12px;">
+            <li>In-depth health and exercise history discussion</li>
+            <li>Identify key lifestyle habits</li>
+            <li>Determine current capabilities and constraints</li>
+            <li>Functional individual screening and movement assessments</li>
+            <li style="list-style:none; font-style:italic; color:#888; margin-top:4px;">Examples: Sit to stand, gait speed, timed up and go, single leg stance, hand grip strength</li>
+            <li>Determine what matters most in participants' daily lives</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lm-card">
+        <div class="lm-card-title"><div class="lm-card-num">2</div>Set Personal Goals</div>
+        <div class="lm-card-body">
+          While people in their 30s, 40s, and 50s may have very similar goals, people 65+ are more likely to have very specific, individual needs. The assessment process is key to identifying those goals.
+          <br><br>The FATM helps participants set goals based on what you <strong>NEED</strong> to do, <strong>WANT</strong> to do, and <strong>USED</strong> to do but no longer can.
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px;">
+            <div style="background:#f0f5f2; border-radius:8px; padding:14px;">
+              <div style="font-weight:700; color:var(--navy); font-size:14px; margin-bottom:6px;">📊 Quantitative Goals</div>
+              <div style="font-size:13px; color:var(--text-mid);">Sit-to-stands in 30 seconds, walking speed, grip strength, steps per day, sessions per week.</div>
+            </div>
+            <div style="background:#f0f5f2; border-radius:8px; padding:14px;">
+              <div style="font-weight:700; color:var(--navy); font-size:14px; margin-bottom:6px;">💬 Qualitative Goals</div>
+              <div style="font-size:13px; color:var(--text-mid);">Feeling confident on stairs, keeping up with grandchildren, carrying groceries without help.</div>
+            </div>
+          </div>
+          <div style="background:#f0f5f2; border-radius:8px; padding:14px; margin-top:12px;">
+            <div style="font-weight:700; color:var(--navy); font-size:14px; margin-bottom:6px;">🗓️ Weekly Commitment</div>
+            <div style="font-size:13px; color:var(--text-mid);">Most clients train <strong>2–3 sessions per week</strong>. Consistency over intensity is the key at this stage of life.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lm-card">
+        <div class="lm-card-title"><div class="lm-card-num">3</div>Develop an Individualized Training Program</div>
+        <div class="lm-card-body">
+          The first two steps — assessment and goal setting — are the foundation for individual exercise plans. This is where we take a holistic approach incorporating all domain elements.
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:12px;">
+            <div style="background:#f0f5f2; border-radius:6px; padding:10px 14px; font-size:14px; color:var(--navy); font-weight:500;">💓 Cardiovascular</div>
+            <div style="background:#f0f5f2; border-radius:6px; padding:10px 14px; font-size:14px; color:var(--navy); font-weight:500;">🦴 Musculoskeletal</div>
+            <div style="background:#f0f5f2; border-radius:6px; padding:10px 14px; font-size:14px; color:var(--navy); font-weight:500;">⚡ Neuromuscular</div>
+            <div style="background:#f0f5f2; border-radius:6px; padding:10px 14px; font-size:14px; color:var(--navy); font-weight:500;">⚖️ Balance</div>
+            <div style="background:#f0f5f2; border-radius:6px; padding:10px 14px; font-size:14px; color:var(--navy); font-weight:500;">🔄 Mobility</div>
+            <div style="background:#f0f5f2; border-radius:6px; padding:10px 14px; font-size:14px; color:var(--navy); font-weight:500;">🧠 Cognitive/Emotional</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lm-card">
+        <div class="lm-card-title"><div class="lm-card-num">4</div>Adjust Continuously</div>
+        <div class="lm-card-body">Adjust programs continuously through quantitative and qualitative metrics. No program is set-and-forget. Life changes, bodies change, goals evolve.</div>
+      </div>
+
+      <div class="lm-card">
+        <div class="lm-card-title"><div class="lm-card-num">5</div>Reassess &amp; Measure Progress</div>
+        <div class="lm-card-body">Reassess periodically, measure progress, and update goals. Progress is tracked both by numbers and by how you feel — both matter equally.</div>
+      </div>
+
+      <div class="lm-card">
+        <div class="lm-card-title"><div class="lm-card-num">6</div>Use Technology to Manage Sessions &amp; Outcomes</div>
+        <div class="lm-card-body">We use software to plan, track, and manage training sessions and outcomes — keeping your program organized, measurable, and evolving.</div>
+      </div>
+    </div>
+
+    <!-- ── ALL ABOUT 80 ── -->
+    <div class="lm-section" id="lm-about80">
+      <div class="lm-section-eyebrow">What the Research Shows</div>
+      <h2 class="lm-section-title">All About 80</h2>
+      <p class="lm-section-intro">By the time people reach 80, significant physical changes have typically occurred — but enormous variation exists. Genetics, lifelong activity, nutrition, and environment all play major roles. Here's what the research tells us.</p>
+
+      <div class="lm-stat-row">
+        <div class="lm-stat"><div class="lm-stat-num">80%</div><div class="lm-stat-label">Not exercising</div></div>
+        <div class="lm-stat"><div class="lm-stat-num">30–40%</div><div class="lm-stat-label">Muscle loss possible</div></div>
+        <div class="lm-stat"><div class="lm-stat-num">3×</div><div class="lm-stat-label">Fall risk vs age 65</div></div>
+      </div>
+
+      <div class="lm-card"><div class="lm-card-title">💪 Muscle Mass &amp; Strength</div><div class="lm-card-body">Sarcopenia is well-established by 80. Sedentary adults may have lost 30–40% of peak muscle mass. Strength losses can be even greater — up to 50% in some muscle groups. <strong>But significant gains are still possible with resistance training.</strong></div></div>
+      <div class="lm-card"><div class="lm-card-title">⚖️ Balance &amp; Fall Risk</div><div class="lm-card-body">Falls become the leading cause of injury-related death. Reaction time slows. Vestibular function declines. Proprioception (knowing where your body is in space) becomes less reliable. Balance training directly addresses this.</div></div>
+      <div class="lm-card"><div class="lm-card-title">🦴 Bone Density</div><div class="lm-card-body">Osteoporosis affects roughly 25% of women and 5% of men over 80. Hip fractures in this age group carry a 20–30% mortality rate within one year. Weight-bearing resistance exercise is one of the few interventions that rebuilds bone.</div></div>
+      <div class="lm-card"><div class="lm-card-title">🧠 Cognitive Function</div><div class="lm-card-body">Processing speed, working memory, and executive function all decline. Exercise — particularly resistance and aerobic training — is one of the most evidence-based interventions for slowing cognitive decline.</div></div>
+      <div class="lm-card"><div class="lm-card-title">💓 Cardiovascular Capacity</div><div class="lm-card-body">Maximum heart rate and VO2 max both decline. Daily activities that were effortless at 60 require more effort at 80. Cardiovascular training preserves the capacity needed for independent living.</div></div>
+      <div class="lm-card"><div class="lm-card-title">🔄 Flexibility &amp; Mobility</div><div class="lm-card-body">Connective tissue stiffens. Range of motion decreases in nearly every joint. Morning stiffness is common. Targeted mobility work can substantially improve quality of daily movement.</div></div>
+      <div class="lm-card"><div class="lm-card-title">😴 Sleep &amp; Recovery</div><div class="lm-card-body">Sleep architecture changes — less deep sleep, more frequent waking. Recovery from exercise takes longer. Training intensity and volume need to be calibrated accordingly — which is exactly what the FATM does.</div></div>
+      <div class="lm-card"><div class="lm-card-title">🤝 Social &amp; Psychological</div><div class="lm-card-body">Loss of independence is the number one fear among adults 80+. Social isolation increases. Exercise programs that build community and confidence address both the physical and psychological dimensions of aging.</div></div>
+
+      <div style="background:var(--navy); border-radius:10px; padding:28px 32px; margin-top:24px;">
+        <p style="font-family:'Playfair Display',serif; font-size:18px; font-style:italic; font-weight:700; color:white; line-height:1.5; margin-bottom:8px;">
+          "Some 80-year-olds still hike, play tennis, or travel independently. Others may need walkers or daily assistance. The difference is rarely just age — it's the choices made along the way."
+        </p>
+        <p style="font-size:13px; color:var(--teal-light); font-weight:600; letter-spacing:0.5px;">— FA65Plus</p>
+      </div>
+    </div>
+
+    <!-- ── NIGHT-TIME READING ── -->
+    <div class="lm-section" id="lm-reading">
+      <div class="lm-section-eyebrow">Curated by Jim</div>
+      <h2 class="lm-section-title">Night-time Reading</h2>
+      <p class="lm-section-intro">I spend a lot of time exploring resistance training for people 65+ and there's a growing amount of content available for free. Here are the articles I find myself recommending most often.</p>
+
+      <a href="https://www.nytimes.com/2023/02/02/well/move/strength-training-older-adults.html" target="_blank" class="lm-article">
+        <div class="lm-article-title">Strength Training After 60: What the Research Shows</div>
+        <div class="lm-article-body">A thorough look at the evidence behind resistance training for older adults — accessible, not clinical.</div>
+        <div class="lm-article-source">New York Times · Subscription may be required</div>
+      </a>
+      <a href="https://www.nytimes.com/2024/01/09/well/move/resistance-training-longevity.html" target="_blank" class="lm-article">
+        <div class="lm-article-title">The Case for Lifting Weights as You Age</div>
+        <div class="lm-article-body">Why resistance training — not just cardio — may be the most important thing older adults can do for longevity.</div>
+        <div class="lm-article-source">New York Times · Subscription may be required</div>
+      </a>
+      <a href="https://www.nytimes.com/2024/06/19/well/move/sarcopenia-muscle-loss-aging.html" target="_blank" class="lm-article">
+        <div class="lm-article-title">Sarcopenia: The Muscle Loss Most People Don't Know About</div>
+        <div class="lm-article-body">A clear explainer on sarcopenia — what it is, why it happens, and what you can do about it.</div>
+        <div class="lm-article-source">New York Times · Subscription may be required</div>
+      </a>
+      <a href="https://www.nytimes.com/2023/11/14/well/move/walking-running-health-benefits.html" target="_blank" class="lm-article">
+        <div class="lm-article-title">Running vs. Walking — Which Is Better for Lasting Health?</div>
+        <div class="lm-article-body">The answer may surprise you. Walking holds up remarkably well — and for most adults 65+, it's far more sustainable.</div>
+        <div class="lm-article-source">New York Times · Subscription may be required</div>
+      </a>
+      <a href="https://www.nytimes.com/2025/07/22/well/move/how-to-build-muscle-aging.html" target="_blank" class="lm-article">
+        <div class="lm-article-title">How Can I Build Muscle as I Age?</div>
+        <div class="lm-article-body">Yes, you can build muscle after 65. Covers protein, progressive resistance, and recovery in plain language.</div>
+        <div class="lm-article-source">New York Times · Subscription may be required</div>
+      </a>
+      <a href="https://www.nytimes.com/2024/11/21/well/move/mobility-workout-exercises-aging.html" target="_blank" class="lm-article">
+        <div class="lm-article-title">The Mobility Workout — Six Exercises to Keep You Moving as You Age</div>
+        <div class="lm-article-body">Mobility is the often-overlooked cousin of strength. This six-exercise routine targets the areas that stiffen first.</div>
+        <div class="lm-article-source">New York Times · Subscription may be required</div>
+      </a>
+      <a href="https://www.cnn.com/2025/12/05/health/muscle-loss-strength-training-longevity-wellness" target="_blank" class="lm-article">
+        <div class="lm-article-title">Modest Strength Training Can Counter Age-Related Decline</div>
+        <div class="lm-article-body">Even small, consistent efforts at resistance training can significantly slow muscle loss. Encouraging and evidence-based.</div>
+        <div class="lm-article-source">CNN Health · Free to read</div>
+      </a>
+      <a href="https://www.eatthis.com/strength-tests-after-50-stronger-than-40/" target="_blank" class="lm-article">
+        <div class="lm-article-title">4 Strength Tests After 50</div>
+        <div class="lm-article-body">Simple self-assessments you can do at home to gauge where your functional strength actually stands.</div>
+        <div class="lm-article-source">Eat This, Not That · Free to read</div>
+      </a>
+    </div>
+
+    <!-- ── EXCELLENT RESOURCES ── -->
+    <div class="lm-section" id="lm-resources">
+      <div class="lm-section-eyebrow">Jim's Picks</div>
+      <h2 class="lm-section-title">Excellent Resources</h2>
+      <p class="lm-section-intro">I spend a lot of time exploring resistance training content for people 65+ and most of what I find shows people under 40. Here are three sources I keep coming back to — they get it right.</p>
+
+      <div class="lm-card" style="border-left-color:var(--navy); padding:24px 28px;">
+<div class="lm-card-title" style="margin-top:4px;">1. Fit Life After 40</div>
+        <div class="lm-card-body" style="margin-bottom:16px;">Gavyn Berntsen is an Over 40 Specialist Trainer based in New Zealand. His content is practical, progressive, and designed for people who want real results — not just to stay comfortable. Excellent technique videos.</div>
+        <a href="https://www.growingyounger.co.nz" target="_blank" class="lm-link">🌐 growingyounger.co.nz</a>
+        <a href="https://www.youtube.com/@FitLifeAfter40s" target="_blank" class="lm-link yt">▶ YouTube</a>
+      </div>
+
+      <div class="lm-card" style="border-left-color:var(--navy); padding:24px 28px;">
+<div class="lm-card-title" style="margin-top:4px;">2. Village Fitness and Physical Therapy</div>
+        <div class="lm-card-body" style="margin-bottom:16px;">Dr. Matt Klingler is a Doctor of Physical Therapy with two facilities in the Los Angeles area. His content bridges the gap between clinical rehab and practical fitness in a way that's hard to find.</div>
+        <a href="https://www.villagefpt.com" target="_blank" class="lm-link">🌐 villagefpt.com</a>
+        <a href="https://www.youtube.com/@VillageFitnessPhysicalTherapy" target="_blank" class="lm-link yt">▶ YouTube</a>
+      </div>
+
+      <div class="lm-card" style="border-left-color:var(--navy); padding:24px 28px;">
+<div class="lm-card-title" style="margin-top:4px;">3. Seth Capehart MD</div>
+        <div class="lm-card-body" style="margin-bottom:16px;">Dr. Capehart is an ER physician. While he doesn't demonstrate exercises, he has an approach and content that is perfect for those of us 65+. Thoughtful, medically grounded, and refreshingly direct.</div>
+        <a href="https://www.youtube.com/@SethCapehartMD" target="_blank" class="lm-link yt">▶ YouTube</a>
+      </div>
+    </div>
+
+  </div><!-- end lm-content -->
+</div><!-- end lm-panel -->
+
+</body>
+</html>
