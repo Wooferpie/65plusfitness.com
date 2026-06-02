@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>65PlusFitness | Strength, Mobility, Independence, At Any Age</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #133630;
+    --navy-mid: #205448;
+    --teal: #804630;
+    --teal-light: #e3bb86;
+    --gold: #c98a5a;
+    --white: #ffffff;
+    --cream: #f5f3ee;
+    --text: #211d1a;
+    --text-mid: #514a44;
+    --text-light: #837a6e;
+    --border: rgba(255,255,255,0.1);
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  /* Global inner section constraint */
+  .hero-content,
+  .story-inner,
+  .truth-inner,
+  .approach-inner,
+  .do-this-inner,
+  .sarco-inner,
+  .contact-inner,
+  .section-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(19,54,48,0.95);
+    backdrop-filter: blur(8px);
+    transition: background 0.4s;
+    box-sizing: border-box;
+    overflow: visible;
+    width: 100%;
+    border-bottom: 3px solid var(--teal);
+  }
+
+  nav.scrolled {
+    background: var(--navy);
+    box-shadow: 0 2px 40px rgba(0,0,0,0.3);
+    border-bottom: 3px solid var(--teal);
+  }
+
+  .nav-brand {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+  }
+
+  .nav-brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: -0.5px;
+  }
+
+  .nav-brand-tag {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-top: 3px;
+    white-space: nowrap;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+
+  .nav-links a:hover { color: var(--teal-light); }
+
+  .nav-cta {
+    background: var(--teal) !important;
+    color: white !important;
+    padding: 11px 22px !important;
+    border-radius: 4px;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    border: none !important;
+    white-space: nowrap;
+  }
+
+  .nav-cta:hover { background: #6b3925 !important; }
+
+  /* Emphasis: .caps = short punchy (uppercase); .long = full sentences (color accent) */
+  .caps { font-weight: 700 !important; text-transform: uppercase; letter-spacing: 0.5px; }
+  .long { font-weight: 700 !important; }
+  .hero .caps, .story-section .caps, .do-this-section .caps, .contact-section .caps { color: #ffffff !important; }
+  .hero .long, .story-section .long, .do-this-section .long, .contact-section .long { color: var(--teal-light) !important; }
+  .faq-answer .caps { color: var(--navy) !important; }
+  .faq-answer .long { color: var(--teal) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0d2a24 0%, #133630 50%, #205448 100%);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 110px 40px 90px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 56px;
+    row-gap: 32px;
+    align-items: start;
+  }
+
+  .hero-text-stack {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .hero-visual {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
+    width: min(460px, 100%);
+    background: var(--teal);
+    border-radius: 0;
+    padding: 72px 10px;
+    box-sizing: border-box;
+    box-shadow: 0 22px 55px rgba(0,0,0,0.28);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 580px;
+  }
+
+  /* video card — smaller, centered in panel */
+  .hero-visual .hero-video-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .hero-headline {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    text-align: center;
+  }
+
+  .hero-text-stack .hero-sub { max-width: none; margin-bottom: 0; }
+
+  .hero-visual .play-circle { background: var(--navy); }
+  .hero-visual .hero-video-thumb:hover .play-circle { background: #1e4d44; }
+
+  .hero-block .hero-epigraph { max-width: none; font-size: clamp(18px, 1.7vw, 23px); }
+  .hero-block .hero-sub { max-width: none; margin-bottom: 0; }
+
+  .hero-epigraph {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    color: rgba(255,255,255,0.95);
+    font-size: clamp(21px, 2.4vw, 29px);
+    line-height: 1.4;
+    max-width: 1000px;
+    margin-bottom: 30px;
+  }
+
+  .hero-lead {
+    max-width: 880px;
+    margin-bottom: 40px;
+  }
+
+  .hero-mid {
+    display: grid;
+    grid-template-columns: minmax(0, 380px) 1fr;
+    gap: 48px;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .hero-mid-text {
+    max-width: none;
+    margin-bottom: 0;
+  }
+
+  .hero-closing {
+    max-width: 880px;
+    margin-bottom: 0;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .hero-eyebrow-line {
+    width: 40px;
+    height: 2px;
+    background: var(--teal);
+  }
+
+  .hero-eyebrow-text {
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    font-weight: 600;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5.5vw, 72px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 28px;
+    letter-spacing: -1px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: #ffffff;
+  }
+
+  .hero-sub {
+    font-size: 19px;
+    color: rgba(255,255,255,0.95);
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 44px;
+    font-weight: 400;
+  }
+
+  .hero-sub strong {
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--teal);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+  }
+
+  .btn-primary:hover {
+    background: #6b3925;
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn-ghost:hover { color: var(--white); }
+
+  .btn-ghost-arrow {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+
+  .btn-ghost:hover .btn-ghost-arrow {
+    border-color: var(--teal);
+    color: var(--teal-light);
+  }
+
+  /* Hero video card */
+  .hero-video-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-video-thumb {
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, rgba(19,54,48,0.9), rgba(128,70,48,0.2));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-video-thumb::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .play-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    position: relative;
+    z-index: 1;
+  }
+
+  .play-circle::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px solid rgba(128,70,48,0.4);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.15); opacity: 0; }
+  }
+
+  .hero-video-thumb:hover .play-circle {
+    background: #6b3925;
+    transform: scale(1.1);
+  }
+
+  .play-triangle {
+    width: 0; height: 0;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    border-left: 20px solid white;
+    margin-left: 3px;
+  }
+
+  .video-label {
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-video-caption {
+    padding: 20px 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .hero-video-caption p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+  }
+
+  .hero-video-caption strong {
+    color: rgba(255,255,255,0.8);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+
+  /* Hero stats */
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 48px;
+  }
+
+  .stat-item {}
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 16px;
+    color: var(--white);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTION BASE ── */
+  section {
+    padding: 100px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-full {
+    max-width: none;
+    padding: 100px 0;
+  }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .section-label-line {
+    width: 32px;
+    height: 2px;
+    background: var(--teal-light);
+  }
+
+  .section-label-text {
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    font-weight: 600;
+  }
+
+  .section-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    color: var(--text);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  /* Contact headline anchors its two-column layout, so keep it left */
+  .contact-left .section-h2 { text-align: left; }
+
+  .section-h2.light { color: var(--white); }
+
+  .section-intro {
+    font-size: 19px;
+    color: var(--text-mid);
+    line-height: 1.75;
+    max-width: 640px;
+    font-weight: 400;
+  }
+
+  .section-intro.light { color: rgba(255,255,255,0.95); }
+
+  /* ── JIM'S STORY ── */
+  .sarco-eyebrow {
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+
+  .story-section {
+    background: var(--teal);
+    padding: 100px 0;
+  }
+
+  .story-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: block;
+  }
+
+  .story-left {}
+
+  .story-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 2.5vw, 32px);
+    font-style: italic;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.4;
+    border-left: 4px solid var(--teal);
+    padding-left: 28px;
+    margin-bottom: 40px;
+  }
+
+  .story-body {
+    font-size: 19px;
+    color: var(--text);
+    line-height: 1.85;
+    font-weight: 400;
+  }
+
+  .story-body p { margin-bottom: 20px; }
+  .story-body p:last-child { margin-bottom: 0; }
+
+  .story-body strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .story-right {}
+
+  .story-card {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .story-card::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(128,70,48,0.1);
+  }
+
+  .story-card-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+    position: absolute;
+    top: 20px; right: 28px;
+  }
+
+  .story-card-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .story-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .story-card-body {
+    font-size: 15px;
+    color: rgba(255,255,255,0.95);
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  /* ── TRUTH SECTION ── */
+  .truth-section {
+    background: var(--navy);
+    padding: 100px 0;
+  }
+
+  .truth-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 120px;
+    padding-right: 120px;
+    }
+
+  .truth-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 64px;
+  }
+
+  .truth-item {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    border-top: 5px solid var(--teal);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .truth-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  }
+
+  /* Photo at the top of each truth card */
+  .truth-photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(100%);
+  }
+
+  /* Bottom row: taller aspect so full face of portrait-orientation photos shows */
+  .truth-photo.truth-photo-tall {
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center 20%;
+  }
+
+  .truth-item-body {
+    padding: 28px 32px 32px;
+    flex: 1;
+  }
+
+  .truth-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .truth-body {
+    font-size: 16px;
+    color: var(--text-mid);
+    line-height: 1.75;
+    font-weight: 400;
+  }
+
+  .truth-callout {
+    margin-top: 64px;
+    padding: 48px;
+    border: 1px solid rgba(128,70,48,0.3);
+    border-radius: 12px;
+    background: rgba(128,70,48,0.06);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .truth-callout-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-style: italic;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.4;
+  }
+
+  .truth-callout-text em {
+    color: var(--teal-light);
+    font-style: normal;
+  }
+
+  /* ── APPROACH ── */
+  .approach-section {
+    background: var(--navy);
+    padding: 100px 0;
+  }
+
+  .approach-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+    }
+
+  .approach-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 88px;
+  }
+
+  .approach-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .approach-step {
+    background: #ffffff;
+    padding: 24px 40px;
+    border: none;
+    border-top: 4px solid var(--teal);
+    border-radius: 10px;
+    display: block;
+    min-height: 0;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.22);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .approach-step:hover {
+    box-shadow: 0 18px 44px rgba(0,0,0,0.30);
+    transform: translateY(-3px);
+  }
+
+  /* Arrow divider between steps — downward arrow with shaft */
+  .approach-step:not(:last-child) {
+    margin-bottom: 88px;
+    position: relative;
+  }
+
+  .approach-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px;
+    height: 70px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 100' fill='%23804630' stroke='%23ffffff' stroke-width='5' stroke-linejoin='round'><path d='M 28,0 L 52,0 L 52,50 L 78,50 Q 50,55 40,100 Q 30,55 2,50 L 28,50 Z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  /* Hide the number entirely */
+  .step-num {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--teal);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .step-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .step-body {
+    font-size: 19px;
+    color: var(--text);
+    line-height: 1.75;
+    font-weight: 400;
+  }
+
+  /* ── FAQ ── */
+  .faq-section {
+    background: var(--navy);
+    padding: 100px 0;
+    position: relative;
+  }
+
+  .faq-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .faq-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .faq-header .section-h2 {
+    margin-bottom: 20px;
+    color: var(--white);
+  }
+
+  .faq-header .section-intro {
+    margin: 0 auto;
+    max-width: 640px;
+    color: rgba(255,255,255,0.82);
+  }
+
+  .faq-category {
+    margin-bottom: 56px;
+  }
+
+  .faq-category:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-category-label {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 2.4vw, 28px);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--white);
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+
+  .faq-item {
+    background: var(--white);
+    border-radius: 8px;
+    margin-bottom: 14px;
+    border-left: 4px solid var(--teal);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+
+  .faq-item[open] {
+    box-shadow: 0 8px 30px rgba(13,42,36,0.08);
+  }
+
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 22px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.45;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    transition: background 0.15s;
+  }
+
+  .faq-item summary:hover {
+    background: rgba(128,70,48,0.04);
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border: 2px solid var(--teal);
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.25s, background 0.25s;
+    margin-top: 2px;
+  }
+
+  .faq-icon::before,
+  .faq-icon::after {
+    content: '';
+    position: absolute;
+    background: var(--teal);
+    transition: opacity 0.2s;
+  }
+
+  .faq-icon::before {
+    top: 50%;
+    left: 6px;
+    right: 6px;
+    height: 2px;
+    transform: translateY(-50%);
+  }
+
+  .faq-icon::after {
+    left: 50%;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    transform: translateX(-50%);
+  }
+
+  .faq-item[open] .faq-icon {
+    background: var(--teal);
+    transform: rotate(45deg);
+  }
+
+  .faq-item[open] .faq-icon::before {
+    background: var(--white);
+  }
+
+  .faq-item[open] .faq-icon::after {
+    opacity: 0;
+  }
+
+  .faq-answer {
+    padding: 0 28px 26px 28px;
+    font-size: 16.5px;
+    color: var(--text-mid);
+    line-height: 1.8;
+    font-weight: 400;
+  }
+
+  .faq-answer p {
+    margin-bottom: 14px;
+  }
+
+  .faq-answer p:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-answer strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .faq-cta {
+    margin-top: 64px;
+    text-align: center;
+    padding: 44px 32px;
+    background: var(--navy-mid);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .faq-cta::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(128,70,48,0.12);
+  }
+
+  .faq-cta-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 2.5vw, 30px);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--white);
+    line-height: 1.4;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .faq-cta a {
+    display: inline-block;
+    background: var(--teal);
+    color: var(--white);
+    padding: 14px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    transition: background 0.2s;
+    position: relative;
+    z-index: 1;
+  }
+
+  .faq-cta a:hover {
+    background: #6b3925;
+  }
+
+  /* ── DO THIS ── */
+  .do-this-section {
+    background: var(--teal);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .do-this-section::before {
+    display: none;
+  }
+
+  .do-this-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
+
+  .do-this-label {
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .do-this-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.05;
+    margin-bottom: 24px;
+  }
+
+  .do-this-body {
+    font-size: 19px;
+    color: var(--text);
+    line-height: 1.75;
+    font-weight: 400;
+    margin-bottom: 36px;
+  }
+
+  .dt-step {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 500px);
+    gap: 56px;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  .dt-step:not(:last-child) {
+    border-bottom: 1px solid rgba(255,255,255,0.6);
+    padding-bottom: 44px;
+    margin-bottom: 44px;
+  }
+  .dt-step:first-child {
+    border-top: 1px solid rgba(255,255,255,0.6);
+    padding-top: 44px;
+  }
+  .dt-step:last-child { margin-bottom: 0; }
+  .dt-copy p {
+    font-size: 19px;
+    color: var(--text);
+    line-height: 1.6;
+    font-weight: 400;
+    margin-bottom: 14px;
+  }
+  .dt-copy p:last-child { margin-bottom: 0; }
+  .dt-video {
+    aspect-ratio: 16/9;
+    width: 100%;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    cursor: pointer;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.20);
+    position: relative;
+    overflow: hidden;
+  }
+  .dt-video:hover .play-circle { transform: scale(1.08); }
+  .dt-video-label {
+    color: rgba(255,255,255,0.92);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .rfm-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 36px;
+    align-items: start;
+  }
+  .photo-ph {
+    border-radius: 8px;
+    background: var(--white);
+    border: 2px dashed #cdc3b2;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .do-this-videos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .video-row {
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+    border: 1px solid #ded6c8;
+  }
+
+  .video-row:hover { background: #ece5d8; }
+
+  .video-row-play {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .video-row-play-tri {
+    width: 0; height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 12px solid white;
+    margin-left: 2px;
+  }
+
+  .video-row-title {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .video-row-sub {
+    font-size: 16px;
+    color: var(--text-mid);
+    margin-top: 2px;
+  }
+
+  /* ── SARCOPENIA ── */
+  .sarco-section {
+    background: var(--navy);
+    padding: 100px 0;
+  }
+
+  .sarco-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    }
+
+  .sarco-split {
+    display: block;
+    margin-top: 32px;
+  }
+
+  .sarco-text {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .sarco-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    align-items: stretch;
+    margin: 46px 0;
+  }
+
+  .chart-frame {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sarco-chart {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .sarco-stat-big {
+    font-family: 'Playfair Display', serif;
+    font-size: 100px;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 8px;
+    opacity: 0.12;
+  }
+
+  .sarco-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .sarco-fact {
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .sarco-facts .sarco-fact:first-child { padding-top: 0; }
+
+  .sarco-fact:first-child { border-top: 1px solid rgba(255,255,255,0.12); }
+
+  .sarco-fact-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--teal-light);
+    line-height: 1;
+  }
+
+  .sarco-fact-text {
+    font-size: 18px;
+    color: rgba(255,255,255,0.95);
+    line-height: 1.75;
+  }
+
+  .sarco-fact-text strong { color: var(--white); }
+
+  .sarco-good-news {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sarco-good-news::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(128,70,48,0.15);
+  }
+
+  .sarco-good-news-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .sarco-good-news-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .sarco-good-news-body {
+    font-size: 16px;
+    color: rgba(255,255,255,0.95);
+    line-height: 1.75;
+    font-weight: 400;
+    margin-bottom: 32px;
+  }
+
+  .sarco-good-news-body strong { color: white; font-weight: 600; }
+
+  .sarco-closing {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--teal-light);
+    line-height: 1.4;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    background: var(--teal);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-section .contact-left .section-h2 { color: var(--navy); }
+  .contact-section .section-intro.light { color: var(--text-mid); }
+  .contact-section .contact-info-text { color: var(--text-mid); }
+  .contact-section .contact-info-text strong { color: var(--navy); }
+
+  .contact-section::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: -100px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(128,70,48,0.1) 0%, transparent 70%);
+  }
+
+  .contact-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-left {}
+
+  .contact-info {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .contact-info-icon {
+    width: 44px; height: 44px;
+    border-radius: 8px;
+    background: rgba(128,70,48,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .contact-info-text {
+    font-size: 16px;
+    color: rgba(255,255,255,0.95);
+  }
+
+  .contact-info-text strong {
+    display: block;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  .contact-form {
+    background: var(--navy);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 12px;
+    padding: 40px;
+  }
+
+  .form-group { margin-bottom: 20px; }
+
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 15px;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(255,255,255,0.45);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--teal);
+  }
+
+  .form-group textarea { height: 120px; resize: vertical; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0a201b;
+    padding: 40px 0;
+  }
+
+  .footer-inner {
+    padding: 0 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .footer-brand span { color: #fff; }
+
+  .footer-tag {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 1px;
+  }
+
+  /* ── MOBILE ── */
+  .mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .mobile-menu-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-content { padding: 120px 32px 60px; }
+    .hero-mid { grid-template-columns: 1fr; gap: 32px; }
+    .hero-video-card { max-width: 500px; }
+    .story-inner { grid-template-columns: 1fr; gap: 48px; padding: 0 32px; }
+    .truth-grid { grid-template-columns: 1fr 1fr; }
+    .approach-header { grid-template-columns: 1fr; gap: 32px; }
+    .approach-step { padding: 24px 22px; }
+    .approach-step:not(:last-child) { margin-bottom: 40px; }
+    .approach-step .step-title { font-size: 20px; }
+    .approach-steps { grid-template-columns: 1fr 1fr; }
+    .do-this-inner { grid-template-columns: 1fr; gap: 48px; padding: 0 32px; }
+    .dt-step { grid-template-columns: 1fr; gap: 32px; }
+    .rfm-grid { grid-template-columns: 1fr; gap: 24px; }
+    .sarco-split { grid-template-columns: 1fr; gap: 48px; }
+    .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+    section { padding: 80px 32px; }
+    .truth-callout { grid-template-columns: 1fr; gap: 24px; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    nav.scrolled { padding: 12px 24px; }
+    .nav-brand-tag { font-size: 9px; letter-spacing: 0.5px; }
+    .nav-links { display: none; }
+    .mobile-menu-btn { display: flex; }
+    .truth-grid { grid-template-columns: 1fr; }
+    .approach-steps { grid-template-columns: 1fr; }
+    .hero-stats { flex-wrap: wrap; gap: 24px; }
+    .hero-content { grid-template-columns: 1fr; padding: 110px 24px 70px; }
+    .hero-visual, .hero-text-stack { grid-column: 1; grid-row: auto; }
+    .hero-text-stack { gap: 24px; }
+    .hero-visual { width: min(460px, 100%); }
+    .hero-bg { background: linear-gradient(135deg, #0d2a24 0%, #133630 50%, #205448 100%); }
+    footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+    .faq-section { padding: 70px 0; }
+    .faq-item summary { padding: 18px 20px; font-size: 16.5px; gap: 16px; }
+    .faq-answer { padding: 0 20px 22px 20px; font-size: 16px; }
+    .faq-cta { padding: 32px 24px; margin-top: 48px; }
+  }
+
+  /* ── PAGE SECTIONS NAV ── */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* Fade in animation */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-content > * {
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  .hero-content > *:nth-child(2) { animation-delay: 0.15s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+
+
+
+  .story-section .section-h2,
+  .story-section .story-body p,
+  .do-this-section .section-h2,
+  .do-this-section .do-this-title,
+  .do-this-section .do-this-body,
+  .do-this-section .dt-copy p,
+  .contact-section .contact-left .section-h2,
+  .contact-section .contact-info-text strong { color: #ffffff; }
+  .story-section .story-body strong { color: #ffffff; }
+  .do-this-section .do-this-label,
+  .contact-section .section-intro.light,
+  .contact-section .contact-info-text { color: rgba(255,255,255,0.92); }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="main-nav">
+  <a href="#" class="nav-brand" onclick="scrollToTop()">
+    <span class="nav-brand-name">65Plus<span style="color:#fff;">Fitness</span></span>
+    <span class="nav-brand-tag">Strength, Mobility, Independence, At Any Age</span>
+  </a>
+  <a href="#contact" class="nav-cta">Questions?</a>
+</nav>
+
+<!-- ══════════════════════════════════════ -->
+<!-- HERO                                   -->
+<!-- ══════════════════════════════════════ -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-headline">
+      <h1>We're in this <em>together.</em></h1>
+      <p class="hero-epigraph">"Every old person knows what it is to be young.<br>But no young person can know what it is to be old."</p>
+    </div>
+
+    <div class="hero-visual"><div class="hero-video-card">
+          <div class="hero-video-thumb">
+            <div class="play-circle">
+              <div class="play-triangle"></div>
+            </div>
+          </div>
+        </div></div>
+
+    <div class="hero-text-stack">
+      <p class="hero-sub hero-lead">If you're 65+, you may not know this &mdash; but whatever your age &mdash; you can gain strength, mobility and independence through resistance training. <strong class="long">And I can help you do that.</strong></p>
+      <p class="hero-sub hero-mid-text">In 2024, at age 78, I fell flat on my face in a parking lot, and it changed me. I learned that we get weaker as we age, but most importantly, that we can do something about it! I also realized that the exercise routine I'd been following for years was not a good choice for someone my age. Luckily, I found a fitness program called the Functional Aging Training Model. And as a result I launched a new career as a personal trainer, working exclusively with people 65+.</p>
+      <p class="hero-sub hero-closing">In December 2025 I became a Certified Personal Trainer and Certified Functional Aging Specialist. Now I'm helping people my age be strong, mobile, and independent.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!-- JIM'S STORY                            -->
+<!-- ══════════════════════════════════════ -->
+<div class="story-section" id="sarcopenia">
+  <div class="story-inner">
+    <h2 class="section-h2">The Silent Thief &mdash; Sarcopenia</h2>
+    <div class="sarco-split">
+      <div class="story-body sarco-text">
+        <p>Most adults have never heard of sarcopenia, but as we age it's been in the background, quietly stealing our strength, mobility, and independence. It begins in our 40s and accelerates dramatically after we turn 60.</p>
+        <p>The research is clear: adults of all ages can build meaningful strength with a consistent program of <strong class="long">resistance training and progressive overloading</strong>.</p>
+      </div>
+      <div class="sarco-images">
+        <div class="chart-frame"><img class="sarco-chart" src="muscle-mass-decline.png" alt="Chart: relative muscle mass declines with age, with resistance training preserving much more than a sedentary path"></div>
+        <div class="chart-frame"><img class="sarco-chart" src="muscle-strength-decline.png" alt="Chart: relative muscle strength declines with age, with resistance training preserving much more than a sedentary path"></div>
+      </div>
+      <div class="story-body sarco-text">
+        <p>The proven method for slowing and restoring muscle mass lost due to sarcopenia is resistance training. Our muscles grow when they are working against something &mdash; a free weight, a stretch band, or the weight of our own body. Less muscle means less independence. <strong class="long">The good news is that muscle responds to training at any age.</strong> People like us in their 70s, 80s, and 90s build real strength when we train consistently.</p>
+        <p>Progressive overloading is the key. As we exercise our bodies gradually adapt and eventually we plateau, a sort of neutral. We don't get stronger or weaker. To keep getting stronger, we must gradually ask a little more of our muscles &mdash; one more repetition, an extra set, a slightly heavier weight. Small, steady steps, and our bodies will respond.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<div class="approach-section" id="approach">
+  <div class="approach-inner">
+    <div class="approach-header" style="display:block; text-align:center; margin-bottom:56px;">
+      <h2 class="section-h2 light" style="max-width:900px; margin:0 auto 28px;">The Functional Aging<br>Training Model<sup style="font-size:0.5em; font-weight:700; vertical-align:super;">TM</sup></h2>
+      <div style="max-width:760px; text-align:left;">
+        <p class="section-intro light" style="max-width:none; margin-bottom:18px;">The model was built specifically to counter the effects of Sarcopenia and comes from the Functional Aging Institute, created by Dr. Dan Ritchie and Dr. Cody Sipe. It establishes a standardized approach to strength training for seniors.</p>
+        <p class="section-intro light" style="max-width:none; margin-bottom:0;">The key difference between the FATM and other training approaches is that the focus is on the muscles we use in our everyday lives &mdash; to function. To get up from a chair, to carry groceries, to climb stairs, to prevent falls.</p>
+      </div>
+    </div>
+
+    <p style="font-family:'Playfair Display',serif; font-size:clamp(24px,2.8vw,34px); font-weight:700; color:#ffffff; text-align:center; max-width:800px; margin:0 auto 36px;">This is how it works.</p>
+    <div class="approach-steps">
+      <div class="approach-step">
+        <div class="step-title">We start with where you are now</div>
+        <div class="step-body">Every program starts with a thorough individual assessment, including health and exercise history, and identifying your current capabilities and constraints.</div>
+      </div>
+      <div class="approach-step">
+        <div class="step-title">Your specific goals</div>
+        <div class="step-body">People 65+ have very different goals from people in their 40s. Together, after the assessment, we set goals that are important to you and the life that you live. That will help keep you motivated and engaged and lead directly to success.</div>
+      </div>
+      <div class="approach-step">
+        <div class="step-title">Train for real life</div>
+        <div class="step-body">Getting up from a chair, preventing falls, living independently, mobility that lets you continue doing the activities you love. The metrics we'll use to plan your exercise program come directly from the goals we've set.</div>
+      </div>
+      <div class="approach-step">
+        <div class="step-title">Progressive overload</div>
+        <div class="step-body">Building strength is a process, and over time we'll gradually increase the load or stress placed on your muscles. We do this by adjusting: the amount of weight you're lifting, the number of repetitions you do for each activity, how long you work out, and by shortening your rests between sets and reps.</div>
+      </div>
+      <div class="approach-step">
+        <div class="step-title">Safety is non-negotiable</div>
+        <div class="step-body">For adults 65+ an injury can be disastrous. If someone 35 injures themselves during training, recovery can be brief. But for people 65+ injuries can be much more challenging. That's why the FATM embeds safety into every exercise strategy, every individual routine, every session.</div>
+      </div>
+      <div class="approach-step">
+        <div class="step-title">Re-assess and adjust</div>
+        <div class="step-body">Achieving your goals is why you're doing this and knowing where you are in relation to those goals tells us whether we're on the right track. On a regular basis we'll reassess your progress and adjust your program as needed. We use quantitative and qualitative metrics &mdash; everything from the number of exercise repetitions and weights used &mdash; to how quickly you can get up out of a chair without using your arms.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- DO THIS                               -->
+<!-- ══════════════════════════════════════ -->
+<div class="do-this-section" id="dothis">
+  <div style="max-width:900px; margin:0 auto; padding:0 24px; box-sizing:border-box; position:relative; z-index:1;">
+    <h2 class="section-h2">If you do nothing else, do this!</h2>
+
+    <div style="margin-top:24px;">
+      <p class="do-this-body" style="margin-bottom:18px;">Make a promise to yourself that you'll start gaining strength by doing a single exercise &mdash; today. You can do it at home. No equipment required.</p>
+      <p class="do-this-body" style="margin-bottom:0;">It's a variation of a SQUAT, called <strong class="caps">sit-to-stand</strong>. Overall, one of the single best exercises ever! Its purpose is to build strength in our core, the central muscle system in our bodies that helps us stand up, turn, lift, push.</p>
+    </div>
+  </div>
+
+  <div style="margin:48px 0 0 max(0px, calc((100% - 900px) / 2)); padding:0 24px; box-sizing:border-box;">
+
+    <div class="dt-step">
+      <div class="dt-copy">
+        <p>For seniors, learning to do squats can be wobbly. In this video I'm demonstrating using a TRX strap that I hold very lightly. It gives clients a secure base. At home you can use a chair, a kitchen counter, anything solid.</p>
+      </div>
+      <div class="dt-video" data-vimeo="1188855533">
+        <div class="play-circle"><div class="play-triangle"></div></div>
+        <div class="dt-video-label">Squat with support</div>
+      </div>
+    </div>
+
+    <div class="dt-step">
+      <div class="dt-copy">
+        <p>After your body becomes comfortable doing squats, transition to sit-to-stand. Begin sitting on a low bench or chair. This provides a safety mechanism, if you get tired or wobbly, you just sit down.</p>
+        <p>Cross your arms and stand up. Initially it may be difficult and if it helps, put the chair next to your kitchen counter, stabilize yourself by holding lightly to the counter with one hand. If you're in a gym, use a bench press seat and use the frame as support. Then stand up.</p>
+        <p>You'll get stronger and eventually be hands-free. Start slowly. Do 5 to 10 repetitions every other day for a couple weeks. Then add two or three repetitions, gradually increase. In a month or so you'll be able to see real progress.</p>
+      </div>
+      <div class="dt-video" data-vimeo="1189092702">
+        <div class="play-circle"><div class="play-triangle"></div></div>
+        <div class="dt-video-label">Sit-to-stand</div>
+      </div>
+    </div>
+
+    <div class="dt-step">
+      <div class="dt-copy">
+        <p>When you can consistently do a sit-to-stand (somewhere around 2 sets of 25 repetitions, 2-3 times a week), transition to adding weight by holding a dumbbell in your arms. This is called progressive overloading.</p>
+        <p>Start small, holding 3-5 pounds. Every few weeks, add 5 pounds. If you feel tired, drop back to the previous weight.</p>
+        <p>As you progress, you may want to shift from adding weight to adding another set. You may notice in the video that I stand up quickly and sit down slowly. It's a way to add power to the movement and can be done with almost any resistance exercise.</p>
+      </div>
+      <div class="dt-video" data-vimeo="1189095737">
+        <div class="play-circle"><div class="play-triangle"></div></div>
+        <div class="dt-video-label">Adding weight</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- FAQ                                    -->
+<!-- ══════════════════════════════════════ -->
+<div class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <h2 class="section-h2">Questions you might be asking.</h2>
+      <p class="section-intro">Most of these came from real conversations &mdash; with friends, neighbors, and people my age who were thinking about getting started but were hesitant. Or who started and quit.</p>
+    </div>
+
+      <details class="faq-item">
+        <summary>Is it safe for me to start exercising at my age, especially if I haven't worked out in years?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>For the vast majority of people 65+, the answer is <strong class="caps">yes</strong> &mdash; research is unambiguous that the risk of <em>not</em> exercising is far greater than the risk of starting. We'll begin with a careful assessment, work at a pace that respects your body, and build up only as you're ready.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do I need clearance from my doctor before we start?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>If you have any cardiovascular condition, are recovering from surgery, or have a chronic condition your doctor is actively managing, the answer is yes. For most other situations, a conversation with your doctor is a good idea but not required. I'll ask you a thorough health-history questionnaire either way.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What are your qualifications?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>I'm an <strong class="caps">ISSA Certified Personal Trainer</strong> and an <strong class="caps">ISSA Certified Functional Aging Specialist</strong> &mdash; that second certification specifically covers the science and methods of training adults 65 and older. I'm not a physical therapist, and I'm not a doctor &mdash; I'm a trainer who specializes in our age group, an 80-year-old male who wants to live the rest of my life strong, mobile, and independent.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Have you actually worked with people my age?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>Yes. I started by working with friends in my own circle &mdash; people I trusted to give me honest feedback and tell me when something wasn't working. That's how I built my approach: real reps with real people in their 70s and 80s, not theory.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How is training someone my age different from training a younger person?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>Younger trainers typically focus on aesthetics, performance, and PRs. Clients 65+ have different goals: keeping out of assisted living, making the stairs feel easy again, getting up off the floor without thinking about it, staying steady on uneven ground. The exercises are adapted, the rest periods are different, the sequencing is different, and progression is much more gradual. I built my training approach around those differences.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Will you push me too hard? Or not hard enough?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>This is a question I think about a lot. In my personal training over the years I regularly pushed myself. But in the last few years I've learned that approach isn't necessary and it's easy to get injured. I've also learned the importance of recovery time for people 65+. I'll push you a little &mdash; strength gains require progressive effort &mdash; but always while watching how your body is responding. We'll talk constantly during sessions. If something doesn't feel right, we change it. Period.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What does a typical session involve? Will I be lifting weights?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>A typical session runs about an hour: a warm-up, then strength work (sometimes including weights, but mostly body weight), balance training, mobility, and a cool-down. Living involves pushing, pulling, lifting, and turning &mdash; and that's how we'll work together.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do I need to be able to get down on the floor?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>Maybe. Getting up and down from the floor safely is an important skill for staying independent, so we'll likely work toward that over time, at your pace. If you can't do it now, we use chairs, benches, and standing variations. If you can, we'll help you maintain that capability.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How often should we meet, and where?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>For most clients, twice a week is the sweet spot &mdash; enough frequency to build real strength, enough recovery between sessions. Some clients do well with once a week plus homework.</p>
+          <p>As for where: we can work at a gym &mdash; either one you currently go to or one I suggest you join &mdash; in your home, or virtually over video (you at home, me in a gym). I can physically go pretty much anywhere in northern Manhattan (New York City), the Bronx, and Westchester County. We'll figure out what fits your situation.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>I'm worried about losing my independence. Can training really help?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>This is the central question, and <strong class="caps">the answer is yes</strong> &mdash; more than almost anything else available to you. The single biggest predictor of whether someone stays in their own home as they age is whether they can stand up from a chair without help. Strength is what protects independence. That's why I started 65PlusFitness.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if I have a bad day and can't do much?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p><strong class="long">That's reality for all of us.</strong> We'll adjust. Some days you'll show up tired, sore, or distracted, and we'll slow things down or try something new. Some days you'll surprise yourself. Both kinds of days are part of the process.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What does it cost?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>Sessions run <strong class="caps">$75&ndash;$100 per hour</strong>, depending on location and frequency. Packages can bring the per-session rate down. The first conversation is free. We'll talk about your situation and figure out whether this makes sense for you.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>I'm embarrassed about my current fitness level. Is that going to be a problem?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p><strong class="caps">No.</strong> In the fall of 2024, I was 78 years old when I fell flat on my face crossing a parking lot. I was in OK shape and very lucky not to break my nose or get a concussion. It was shocking &mdash; and embarrassing &mdash; that it had happened at all. I stopped training for a while, did a reset, found a trainer, and discovered Functional Aging Training. And now, because I know exactly how it feels to realize what being this age means, I started 65PlusFitness. <strong class="long">Wherever you're starting is fine.</strong></p>
+        </div>
+      </details>
+
+            <details class="faq-item">
+        <summary>I've tried gyms before and felt out of place. How is this different?<span class="faq-icon"></span></summary>
+        <div class="faq-answer">
+          <p>Most gyms are designed for people in their 20s, 30s, and 40s, and staffed by trainers who've never lived in a 70- or 80-year-old body. The room can be noisy, the equipment intimidating, and the culture built around looking a certain way. 65PlusFitness is the opposite of that. If we work in a public gym, we'll still be focused, individualized, and engaged in <strong class="long">the things that actually matter</strong> at our age. You won't feel out of place. You'll feel like the work was tailor-made for you &mdash; because it was.</p>
+        </div>
+      </details>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- CONTACT                               -->
+<!-- ══════════════════════════════════════ -->
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <h2 class="section-h2 light">Ready to get<br>stronger?</h2>
+      <p class="section-intro light" style="margin-top:20px;">The first conversation is free. No commitment. Just a chance to talk about where you are, what's getting harder, and whether 65PlusFitness might be the right fit for you.</p>
+
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+          <div class="contact-info-text">
+            <strong class="caps">Phone</strong>
+            (845) 943-0623
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+          <div class="contact-info-text">
+            <strong class="caps">Email</strong>
+            Jim@65PlusFitness.com
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3 style="font-family:'Playfair Display',serif; font-size:24px; font-weight:700; color:white; margin-bottom:28px;">Book a Free Call</h3>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="First and last name">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>Phone (optional)</label>
+        <input type="tel" placeholder="(555) 000-0000">
+      </div>
+      <div class="form-group">
+        <label>Tell me about yourself</label>
+        <textarea placeholder="Tell me a little about your current exercise activity &mdash; how often, what types of things do you do? If you belong to a gym, which one is it and where is it?"></textarea>
+      </div>
+      <button class="btn-primary" style="width:100%; padding:16px; font-size:16px;">Send My Message</button>
+    </div>
+  </div>
+
+  <div style="max-width:1200px; margin:60px auto 0; padding:0 40px; box-sizing:border-box; text-align:center;">
+    <p style="font-family:'Playfair Display',serif; font-size:clamp(19px,2vw,26px); font-style:italic; font-weight:700; color:#ffffff; line-height:1.5; margin-bottom:16px;">"I'm 80 years old and I know what it feels like to be afraid of falling. And I know what it's like to want to stop exercising. I also know that you can get stronger. I did and so can you."</p>
+    <p style="font-size:18px; color:#ffffff; font-weight:600; letter-spacing:0.5px;">&mdash; Jim Decker, Certified Functional Aging Specialist</p>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div style="font-family:'Playfair Display',serif; font-size:24px; font-weight:900; color:var(--white);">65Plus<span style="color:#fff;">Fitness</span></div>
+      <div style="font-size:13px; letter-spacing:2px; text-transform:uppercase; color:#fff; margin-top:4px;">Strength, Mobility, Independence, At Any Age</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll behavior
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('main-nav');
+    if (window.scrollY > 60) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+
+
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+<script>
+  /* ── Video overlay (hero + Do This clips) ── */
+  function playVimeo(id) {
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;display:flex;align-items:center;justify-content:center;';
+    overlay.innerHTML =
+      '<div style="position:relative;width:min(960px,92vw);aspect-ratio:16/9;">'
+      + '<iframe src="https://player.vimeo.com/video/' + id + '?autoplay=1&title=0&byline=0&portrait=0"'
+      + ' style="position:absolute;inset:0;width:100%;height:100%;border:none;"'
+      + ' allow="autoplay;fullscreen;picture-in-picture" allowfullscreen></iframe>'
+      + '<button aria-label="Close video" style="position:absolute;top:-52px;right:0;'
+      + 'background:none;border:none;color:#fff;font-size:36px;cursor:pointer;line-height:1;padding:4px;">&times;</button>'
+      + '</div>';
+    overlay.querySelector('button').addEventListener('click', () => overlay.remove());
+    overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+    function esc(e){ if (e.key === 'Escape') { overlay.remove(); document.removeEventListener('keydown', esc); } }
+    document.addEventListener('keydown', esc);
+    document.body.appendChild(overlay);
+  }
+
+  /* Hero thumbnail */
+  const heroThumb = document.querySelector('.hero-video-thumb');
+  if (heroThumb) {
+    heroThumb.style.backgroundImage = 'url(hero-thumb.jpg)';
+    heroThumb.style.backgroundSize = 'cover';
+    heroThumb.style.backgroundPosition = 'center top';
+    heroThumb.style.cursor = 'pointer';
+    heroThumb.addEventListener('click', () => playVimeo('1195727647'));
+  }
+
+  /* Do This clips */
+  document.querySelectorAll('.dt-video[data-vimeo]').forEach(function(el) {
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', function() { playVimeo(el.getAttribute('data-vimeo')); });
+  });
+</script>
+</body>
+</html>
